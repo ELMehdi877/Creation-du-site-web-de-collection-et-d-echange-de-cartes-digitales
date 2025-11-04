@@ -16,10 +16,10 @@ header nav ul{
   font-weight: 400;
   font-style: normal;
   font-size: 30px;
-  background: linear-gradient(black,black);
+  /* background: linear-gradient(black,black); */
 }
 header nav{
-    background: linear-gradient(black,rgba(0, 0, 0, 0.199));
+    background: linear-gradient(black,rgba(0, 0, 0, 0.597));
 }
 
  .anime{
@@ -78,6 +78,12 @@ p{
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+
+footer{
+  background: linear-gradient(#30182E,#242B3E,#192755);
+  /* height: 800px; */
 }
 
 
