@@ -1,23 +1,12 @@
+const open_menu = document.querySelector("#op")
+const close_menu = document.querySelector("#cl")
+// function menu(){
 
-    // var swiper = new Swiper(".mySwiper", {
-    //   slidesPerView: 1,
-    //   spaceBetween: 10,
-    //   pagination: {
-    //     el: ".swiper-pagination",
-    //     clickable: true,
-    //   },
-    //   breakpoints: {
-    //     640: {
-    //       slidesPerView: 2,
-    //       spaceBetween: 20,
-    //     },
-    //     768: {
-    //       slidesPerView: 4,
-    //       spaceBetween: 40,
-    //     },
-    //     1024: {
-    //       slidesPerView: 5,
-    //       spaceBetween: 50,
-    //     },
-    //   },
-    // });
+//     open_menu.classList.toggle("hidden")
+//     close_menu.classList.toggle("hidden")
+// }
+
+console.log(open_menu,close_menu)
+
+
+        var swiper = new Swiper(".mySwiper", {});

@@ -103,6 +103,10 @@ footer{
     }
 
 
+    .open{
+      right: 0 ;
+    }
+
 
 /* 
 @media screen and (max-width: 700px){

@@ -4,13 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script> src = "scripte.js"</script>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <title>Pokemone</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <!-- <link
         href="https://fonts.googleapis.com/css2?family=Belgrano&family=Leckerli+One&family=Lexend:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Volkhov:ital,wght@0,400;0,700;1,400;1,700&display=swap"
         rel="stylesheet"> -->
@@ -20,18 +19,23 @@
 
 <body class="">
     <header class="header1 bg-[url(image/bg-0.png)] bg-cover bg-center">
+
         <nav class="flex justify-around  items-center fixed w-5/5 h-20 z-10 top-0">
             <img src="image/logo.png" alt="logo">
 
-            <ul class="lg:flex gap-12 text-white hidden lg:block">
+            <ul
+                class="open lg:flex lg:gap-12 bg-red-400 text-white fixed flex flex-col gap-10 top-0 w-[70%] h-screen right-[-100%] items-center justify-center lg:block">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="Guid.html">Guid</a></li>
                 <li><a href="Market.html">Market</a></li>
                 <li><a href="My Deck.html">My Deck</a></li>
                 <li><a href="Favorite.html">Favorite</a></li>
             </ul>
-            <img src="image/shopp.png" alt="icon">
-            <img src="image/menu.png" alt="icon" class="lg:hidden">
+            <img src="image/shopp.png" alt="icon" >
+            <div style="background: red; z-index: 11;" class="relative">
+                <button id="op" class=" absolute">M</button>
+                <button id="cl" class=" absolute hidden">X</button>
+            </div>
         </nav>
         <section class="header2 section-home flex flex-col items-center gap-8">
 
@@ -554,7 +558,7 @@
 
 
 
-.................................
+            .................................
 
         </section>
 
@@ -607,12 +611,10 @@
     </footer>
 
     <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <!-- Initialize Swiper -->
-    <script>
-        var swiper = new Swiper(".mySwiper", {});
-    </script>
+  
+    <script src = "scripte.js" > </script>
 
 </body>
 <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
