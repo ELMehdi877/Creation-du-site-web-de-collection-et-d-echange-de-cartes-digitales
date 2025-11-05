@@ -7,7 +7,7 @@
     text-decoration: none;
 }
 
-header{
+.header1{
     height: 55rem;
 }
 
@@ -47,7 +47,7 @@ header nav{
    padding: 15px;
    border-radius: 10px;
 }
-section{
+.section-home{
     height: 800px;
 }
 
@@ -85,6 +85,22 @@ footer{
   background: linear-gradient(#30182E,#242B3E,#192755);
   /* height: 800px; */
 }
+.section-market{
+  height: 525px;
+
+}
+
+.carte_market{
+  background: linear-gradient(90deg,#47474778,#e46a6a7a);
+}
+
+ 
+
+    .swiper-slide {
+      display: flex;
+      justify-items: center;
+      align-items: center;
+    }
 
 
 

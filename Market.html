@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Pokemone</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- <link
+        href="https://fonts.googleapis.com/css2?family=Belgrano&family=Leckerli+One&family=Lexend:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Volkhov:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet"> -->
+</head>
+
+
+<body>
+    <header>
+        <nav class="flex justify-around  items-center fixed w-5/5 h-20 z-10 top-0">
+            <img src="image/logo.png" alt="logo">
+
+            <ul class="lg:flex gap-12 text-white hidden lg:block">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Guid.html">Guid</a></li>
+                <li><a href="Market.html">Market</a></li>
+                <li><a href="My Deck.html">My Deck</a></li>
+                <li><a href="Favorite.html">Favorite</a></li>
+            </ul>
+            <img src="image/shopp.png" alt="icon">
+            <img src="image/menu.png" alt="icon" class="lg:hidden">
+        </nav>
+    </header>
+
+    <main style="padding: 130px 0;" class=" bg-[url(image/bg-8.png)] bg-cover grid grid-cols-1 gap-8 bg-center lg:flex lg:flex-col items-center lg:h-500 justify-center">
+
+        <section class="hidden lg:block lg:flex justify-center items-center lg:w-350 lg:h-15 lg:bg-linear-[#1D1C1C,#A67878] rounded-[10px]">
+            <ul class="font-[Belgrano] flex  gap-12 text-white text-[20px]">
+                <li class=" bg-[#1DFBB8]  text-black w-35 flex justify-center rounded-tl-[10px] rounded-br-[10px]">Communes</li>
+                <li class=" bg-[#EEB922]  text-black w-35 flex justify-center rounded-tl-[10px] rounded-br-[10px]">Legendar</li>
+                <li class=" bg-[#FA5220]  text-black w-35 flex justify-center rounded-tl-[10px] rounded-br-[10px]">Rares</li>
+                <li class=" bg-[#1CB8FB]  text-black w-35 flex justify-center rounded-tl-[10px] rounded-br-[10px]">Mythic</li>
+                <li class=" bg-[#BA41ED]  text-black w-35 flex justify-center rounded-tl-[10px] rounded-br-[10px]">Epic</li>
+            </ul>
+        </section>
+        <section class="hidden lg:block lg:grid lg:grid-cols-3 gap-12 items-center">
+
+            <div class="carte_market w-65 h-108 lg:w-90 lg:h-150 rounded-[15px] flex flex-col justify-center items-center gap-5">
+                <div
+                    class=" bg-[url(image/carte-5.png)] bg-cover bg-center lg:w-80 w-60 lg:h-112 h-85 flex flex-col justify-end items-center">
+                    <div
+                        class=" carte text-white relative flex flex-col justify-center items-center bottom-0.5  w-full h-33 lg:h-44 rounded-[10px]">
+                        <div class="flex justify-center items-center lg:gap-6 gap-6 relative left-2.5">
+                            <h2 class="anime rotate-[90deg] lg:text-[24px] text-[18px] absolute  lg:right-44 right-35 ">
+                                ANIME</h3>
+                                <div
+                                    class="flex flex-col font-[Poppins] gap-1 w-25 lg:w-35 relative lg:left-6 left-2 lg:gap-1">
+                                    <h5 class="lg:text-[15px] text-[12px] font-[700]">POKI</h5>
+                                    <p class="lg:text-[12px]/3 text-[9px]/2  font-[400] ">Lorem ipsum dolor
+                                        sit
+                                        ame Lorem ipsum
+                                        dolor
+                                        sit
+                                        amet
+                                        consectetur adipisicing elit.</p>
+                                </div>
+                                <P class="lg:text-[11px] text-[9px] font-[700] relative top-1">
+                                    prix : 25$
+                                </P>
+                        </div>
+                        <div class="flex gap-8 lg:gap-13 lg:text-[24px] text-[20px] font-[700] font-[Lemon]">
+                            <h2>POKEMON</h2>
+                            <h3 class="text-[#1DFBB8]">XX</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex gap-12">
+                    <button class="w-18 h-10 lg:w-25 lg:h-13 rounded-[4px] text-[12px] lg:text-[15px] text-white bg-[#2F8E44]">ajouter au
+                        panie</button>
+                    <button class="w-18 h-10 lg:w-22 lg:h-13 rounded-[4px] text-[12px] lg:text-[15px] text-white bg-[#936C57]">ajouter aux
+                        favoris</button>
+                </div>
+            </div>
+            
+            <div class="carte_market w-65 h-108 lg:w-90 lg:h-150 rounded-[15px] flex flex-col justify-center items-center gap-5">
+                <div
+                    class=" bg-[url(image/carte-5.png)] bg-cover bg-center lg:w-80 w-60 lg:h-112 h-85 flex flex-col justify-end items-center">
+                    <div
+                        class=" carte text-white relative flex flex-col justify-center items-center bottom-0.5  w-full h-33 lg:h-44 rounded-[10px]">
+                        <div class="flex justify-center items-center lg:gap-6 gap-6 relative left-2.5">
+                            <h2 class="anime rotate-[90deg] lg:text-[24px] text-[18px] absolute  lg:right-44 right-35 ">
+                                ANIME</h3>
+                                <div
+                                    class="flex flex-col font-[Poppins] gap-1 w-25 lg:w-35 relative lg:left-6 left-2 lg:gap-1">
+                                    <h5 class="lg:text-[15px] text-[12px] font-[700]">POKI</h5>
+                                    <p class="lg:text-[12px]/3 text-[9px]/2  font-[400] ">Lorem ipsum dolor
+                                        sit
+                                        ame Lorem ipsum
+                                        dolor
+                                        sit
+                                        amet
+                                        consectetur adipisicing elit.</p>
+                                </div>
+                                <P class="lg:text-[11px] text-[9px] font-[700] relative top-1">
+                                    prix : 25$
+                                </P>
+                        </div>
+                        <div class="flex gap-8 lg:gap-13 lg:text-[24px] text-[20px] font-[700] font-[Lemon]">
+                            <h2>POKEMON</h2>
+                            <h3 class="text-[#1DFBB8]">XX</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex gap-12">
+                    <button class="w-18 h-10 lg:w-22 lg:h-13 rounded-[4px] text-[12px] lg:text-[15px] text-white bg-[#2F8E44]">ajouter au
+                        panie</button>
+                    <button class="w-18 h-10 lg:w-22 lg:h-13 rounded-[4px] text-[12px] lg:text-[15px] text-white bg-[#936C57]">ajouter aux
+                        favoris</button>
+                </div>
+            </div>
+
+            <div class="carte_market w-65 h-108 lg:w-90 lg:h-150 rounded-[15px] flex flex-col justify-center items-center gap-5">
+                <div
+                    class=" bg-[url(image/carte-5.png)] bg-cover bg-center lg:w-80 w-60 lg:h-112 h-85 flex flex-col justify-end items-center">
+                    <div
+                        class=" carte text-white relative flex flex-col justify-center items-center bottom-0.5  w-full h-33 lg:h-44 rounded-[10px]">
+                        <div class="flex justify-center items-center lg:gap-6 gap-6 relative left-2.5">
+                            <h2 class="anime rotate-[90deg] lg:text-[24px] text-[18px] absolute  lg:right-44 right-35 ">
+                                ANIME</h3>
+                                <div
+                                    class="flex flex-col font-[Poppins] gap-1 w-25 lg:w-35 relative lg:left-6 left-2 lg:gap-1">
+                                    <h5 class="lg:text-[15px] text-[12px] font-[700]">POKI</h5>
+                                    <p class="lg:text-[12px]/3 text-[9px]/2  font-[400] ">Lorem ipsum dolor
+                                        sit
+                                        ame Lorem ipsum
+                                        dolor
+                                        sit
+                                        amet
+                                        consectetur adipisicing elit.</p>
+                                </div>
+                                <P class="lg:text-[11px] text-[9px] font-[700] relative top-1">
+                                    prix : 25$
+                                </P>
+                        </div>
+                        <div class="flex gap-8 lg:gap-13 lg:text-[24px] text-[20px] font-[700] font-[Lemon]">
+                            <h2>POKEMON</h2>
+                            <h3 class="text-[#1DFBB8]">XX</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex gap-12">
+                    <button class="w-18 h-10 lg:w-22 lg:h-13 rounded-[4px] text-[12px] lg:text-[15px] text-white bg-[#2F8E44]">ajouter au
+                        panie</button>
+                    <button class="w-18 h-10 lg:w-22 lg:h-13 rounded-[4px] text-[12px] lg:text-[15px] text-white bg-[#936C57]">ajouter aux
+                        favoris</button>
+                </div>
+            </div>
+            
+            <div class="carte_market w-65 h-108 lg:w-90 lg:h-150 rounded-[15px] flex flex-col justify-center items-center gap-5">
+                <div
+                    class=" bg-[url(image/carte-5.png)] bg-cover bg-center lg:w-80 w-60 lg:h-112 h-85 flex flex-col justify-end items-center">
+                    <div
+                        class=" carte text-white relative flex flex-col justify-center items-center bottom-0.5  w-full h-33 lg:h-44 rounded-[10px]">
+                        <div class="flex justify-center items-center lg:gap-6 gap-6 relative left-2.5">
+                            <h2 class="anime rotate-[90deg] lg:text-[24px] text-[18px] absolute  lg:right-44 right-35 ">
+                                ANIME</h3>
+                                <div
+                                    class="flex flex-col font-[Poppins] gap-1 w-25 lg:w-35 relative lg:left-6 left-2 lg:gap-1">
+                                    <h5 class="lg:text-[15px] text-[12px] font-[700]">POKI</h5>
+                                    <p class="lg:text-[12px]/3 text-[9px]/2  font-[400] ">Lorem ipsum dolor
+                                        sit
+                                        ame Lorem ipsum
+                                        dolor
+                                        sit
+                                        amet
+                                        consectetur adipisicing elit.</p>
+                                </div>
+                                <P class="lg:text-[11px] text-[9px] font-[700] relative top-1">
+                                    prix : 25$
+                                </P>
+                        </div>
+                        <div class="flex gap-8 lg:gap-13 lg:text-[24px] text-[20px] font-[700] font-[Lemon]">
+                            <h2>POKEMON</h2>
+                            <h3 class="text-[#1DFBB8]">XX</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex gap-12">
+                    <button class="w-18 h-10 lg:w-22 lg:h-13 rounded-[4px] text-[12px] lg:text-[15px] text-white bg-[#2F8E44]">ajouter au
+                        panie</button>
+                    <button class="w-18 h-10 lg:w-22 lg:h-13 rounded-[4px] text-[12px] lg:text-[15px] text-white bg-[#936C57]">ajouter aux
+                        favoris</button>
+                </div>
+            </div>
+
+            <div class="carte_market w-65 h-108 lg:w-90 lg:h-150 rounded-[15px] flex flex-col justify-center items-center gap-5">
+                <div
+                    class=" bg-[url(image/carte-5.png)] bg-cover bg-center lg:w-80 w-60 lg:h-112 h-85 flex flex-col justify-end items-center">
+                    <div
+                        class=" carte text-white relative flex flex-col justify-center items-center bottom-0.5  w-full h-33 lg:h-44 rounded-[10px]">
+                        <div class="flex justify-center items-center lg:gap-6 gap-6 relative left-2.5">
+                            <h2 class="anime rotate-[90deg] lg:text-[24px] text-[18px] absolute  lg:right-44 right-35 ">
+                                ANIME</h3>
+                                <div
+                                    class="flex flex-col font-[Poppins] gap-1 w-25 lg:w-35 relative lg:left-6 left-2 lg:gap-1">
+                                    <h5 class="lg:text-[15px] text-[12px] font-[700]">POKI</h5>
+                                    <p class="lg:text-[12px]/3 text-[9px]/2  font-[400] ">Lorem ipsum dolor
+                                        sit
+                                        ame Lorem ipsum
+                                        dolor
+                                        sit
+                                        amet
+                                        consectetur adipisicing elit.</p>
+                                </div>
+                                <P class="lg:text-[11px] text-[9px] font-[700] relative top-1">
+                                    prix : 25$
+                                </P>
+                        </div>
+                        <div class="flex gap-8 lg:gap-13 lg:text-[24px] text-[20px] font-[700] font-[Lemon]">
+                            <h2>POKEMON</h2>
+                            <h3 class="text-[#1DFBB8]">XX</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex gap-12">
+                    <button class="w-18 h-10 lg:w-22 lg:h-13 rounded-[4px] text-[12px] lg:text-[15px] text-white bg-[#2F8E44]">ajouter au
+                        panie</button>
+                    <button class="w-18 h-10 lg:w-22 lg:h-13 rounded-[4px] text-[12px] lg:text-[15px] text-white bg-[#936C57]">ajouter aux
+                        favoris</button>
+                </div>
+            </div>
+
+            <div class="carte_market w-65 h-108 lg:w-90 lg:h-150 rounded-[15px] flex flex-col justify-center items-center gap-5">
+                <div
+                    class=" bg-[url(image/carte-5.png)] bg-cover bg-center lg:w-80 w-60 lg:h-112 h-85 flex flex-col justify-end items-center">
+                    <div
+                        class=" carte text-white relative flex flex-col justify-center items-center bottom-0.5  w-full h-33 lg:h-44 rounded-[10px]">
+                        <div class="flex justify-center items-center lg:gap-6 gap-6 relative left-2.5">
+                            <h2 class="anime rotate-[90deg] lg:text-[24px] text-[18px] absolute  lg:right-44 right-35 ">
+                                ANIME</h3>
+                                <div
+                                    class="flex flex-col font-[Poppins] gap-1 w-25 lg:w-35 relative lg:left-6 left-2 lg:gap-1">
+                                    <h5 class="lg:text-[15px] text-[12px] font-[700]">POKI</h5>
+                                    <p class="lg:text-[12px]/3 text-[9px]/2  font-[400] ">Lorem ipsum dolor
+                                        sit
+                                        ame Lorem ipsum
+                                        dolor
+                                        sit
+                                        amet
+                                        consectetur adipisicing elit.</p>
+                                </div>
+                                <P class="lg:text-[11px] text-[9px] font-[700] relative top-1">
+                                    prix : 25$
+                                </P>
+                        </div>
+                        <div class="flex gap-8 lg:gap-13 lg:text-[24px] text-[20px] font-[700] font-[Lemon]">
+                            <h2>POKEMON</h2>
+                            <h3 class="text-[#1DFBB8]">XX</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex gap-12">
+                    <button class="w-18 h-10 lg:w-22 lg:h-13 rounded-[4px] text-[12px] lg:text-[15px] text-white bg-[#2F8E44]">ajouter au
+                        panie</button>
+                    <button class="w-18 h-10 lg:w-22 lg:h-13 rounded-[4px] text-[12px] lg:text-[15px] text-white bg-[#936C57]">ajouter aux
+                        favoris</button>
+                </div>
+            </div>
+
+        </section>
+        <div class="flex gap-5">
+            <a href="#"><button class="bg-[#5B1E1E] rounded-[5px] w-10 h-10 text-white text-[18px] font-[Poppins] font-[700]">1</button></a>
+            <a href="#"><button class="bg-[#5B1E1E] rounded-[5px] w-10 h-10 text-white text-[18px] font-[Poppins] font-[700]">2</button></a>
+        </div>
+
+        <section class="section-market flex flex-wrap gap-2 justify-center items-center lg:hidden ">
+
+            <div class="swiper mySwiper lg:hidden">
+                <div class="swiper-wrapper lg:hidden">
+
+                    <div class="swiper-slide lg:hidden">
+                        <div
+                            class="carte_market w-65 h-108 rounded-[15px] flex flex-col justify-center items-center gap-5">
+                            <div
+                                class=" bg-[url(image/carte-5.png)] bg-cover bg-center lg:w-80 w-60 lg:h-112 h-85 flex flex-col justify-end items-center">
+                                <div
+                                    class=" carte text-white relative flex flex-col justify-center items-center bottom-0.5  w-full h-33 lg:h-44 rounded-[10px]">
+                                    <div class="flex justify-center items-center lg:gap-6 gap-6 relative left-2.5">
+                                        <h2
+                                            class="anime rotate-[90deg] lg:text-[24px] text-[18px] absolute  lg:right-44 right-35 ">
+                                            ANIME</h3>
+                                            <div
+                                                class="flex flex-col font-[Poppins] gap-1 w-25 lg:w-35 relative lg:left-6 left-2 lg:gap-1">
+                                                <h5 class="lg:text-[15px] text-[12px] font-[700]">POKI</h5>
+                                                <p class="lg:text-[12px]/3 text-[9px]/2  font-[400] ">Lorem ipsum dolor
+                                                    sit
+                                                    ame Lorem ipsum
+                                                    dolor
+                                                    sit
+                                                    amet
+                                                    consectetur adipisicing elit.</p>
+                                            </div>
+                                            <P class="lg:text-[11px] text-[9px] font-[700] relative top-1">
+                                                prix : 25$
+                                            </P>
+                                    </div>
+                                    <div
+                                        class="flex gap-8 lg:gap-13 lg:text-[24px] text-[20px] font-[700] font-[Lemon]">
+                                        <h2>POKEMON</h2>
+                                        <h3 class="text-[#1DFBB8]">XX</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex gap-12">
+                                <button class="w-18 h-10 rounded-[4px] text-[12px] bg-[#2F8E44]">ajouter au
+                                    panie</button>
+                                <button class="w-18 h-10 rounded-[4px] text-[12px] bg-[#936C57]">ajouter aux
+                                    favoris</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div
+                            class="carte_market w-65 h-108 rounded-[15px] flex flex-col justify-center items-center gap-5">
+                            <div
+                                class=" bg-[url(image/carte-10.png)] bg-cover bg-center lg:w-80 w-60 lg:h-112 h-85 flex flex-col justify-end items-center">
+                                <div
+                                    class=" carte text-white relative flex flex-col justify-center items-center bottom-0.5  w-full h-33 lg:h-44 rounded-[10px]">
+                                    <div class="flex justify-center items-center lg:gap-6 gap-6 relative left-2.5">
+                                        <h2
+                                            class="anime rotate-[90deg] lg:text-[24px] text-[18px] absolute  lg:right-44 right-35 ">
+                                            ANIME</h3>
+                                            <div
+                                                class="flex flex-col font-[Poppins] gap-1 w-25 lg:w-35 relative lg:left-6 left-2 lg:gap-1">
+                                                <h5 class="lg:text-[15px] text-[12px] font-[700]">POKI</h5>
+                                                <p class="lg:text-[12px]/3 text-[9px]/2  font-[400] ">Lorem ipsum dolor
+                                                    sit
+                                                    ame Lorem ipsum
+                                                    dolor
+                                                    sit
+                                                    amet
+                                                    consectetur adipisicing elit.</p>
+                                            </div>
+                                            <P class="lg:text-[11px] text-[9px] font-[700] relative top-1">
+                                                prix : 25$
+                                            </P>
+                                    </div>
+                                    <div
+                                        class="flex gap-8 lg:gap-13 lg:text-[24px] text-[20px] font-[700] font-[Lemon]">
+                                        <h2>POKEMON</h2>
+                                        <h3 class="text-[#1DFBB8]">XX</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex gap-12">
+                                <button class="w-18 h-10 rounded-[4px] text-[12px] bg-[#2F8E44]">ajouter au
+                                    panie</button>
+                                <button class="w-18 h-10 rounded-[4px] text-[12px] bg-[#936C57]">ajouter aux
+                                    favoris</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <button
+                class=" bg-linear-[#1DFBB8] h-10 text-black w-80 rounded-tl-[10px] rounded-br-[10px] font-[Belgrano] text-[20px]">les
+                cartes Communes</button>
+        </section>
+
+        <section class="section-market flex flex-wrap gap-2 justify-center items-center lg:hidden ">
+
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+
+                    <div class="swiper-slide">
+                        <div
+                            class="carte_market w-65 h-108 rounded-[15px] flex flex-col justify-center items-center gap-5">
+                            <div
+                                class=" bg-[url(image/carte-3.png)] bg-cover bg-center lg:w-80 w-60 lg:h-112 h-85 flex flex-col justify-end items-center">
+                                <div
+                                    class=" carte text-white relative flex flex-col justify-center items-center bottom-0.5  w-full h-33 lg:h-44 rounded-[10px]">
+                                    <div class="flex justify-center items-center lg:gap-6 gap-6 relative left-2.5">
+                                        <h2
+                                            class="anime rotate-[90deg] lg:text-[24px] text-[18px] absolute  lg:right-44 right-35 ">
+                                            ANIME</h3>
+                                            <div
+                                                class="flex flex-col font-[Poppins] gap-1 w-25 lg:w-35 relative lg:left-6 left-2 lg:gap-1">
+                                                <h5 class="lg:text-[15px] text-[12px] font-[700]">POKI</h5>
+                                                <p class="lg:text-[12px]/3 text-[9px]/2  font-[400] ">Lorem ipsum dolor
+                                                    sit
+                                                    ame Lorem ipsum
+                                                    dolor
+                                                    sit
+                                                    amet
+                                                    consectetur adipisicing elit.</p>
+                                            </div>
+                                            <P class="lg:text-[11px] text-[9px] font-[700] relative top-1">
+                                                prix : 25$
+                                            </P>
+                                    </div>
+                                    <div
+                                        class="flex gap-8 lg:gap-13 lg:text-[24px] text-[20px] font-[700] font-[Lemon]">
+                                        <h2>POKEMON</h2>
+                                        <h3 class="text-[#EEB922]">XX</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex gap-12">
+                                <button class="w-18 h-10 rounded-[4px] text-[12px] bg-[#2F8E44]">ajouter au
+                                    panie</button>
+                                <button class="w-18 h-10 rounded-[4px] text-[12px] bg-[#936C57]">ajouter aux
+                                    favoris</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <button
+                class=" bg-linear-[#EEB922] h-10 text-black w-80 rounded-tl-[10px] rounded-br-[10px] font-[Belgrano] text-[20px]">les
+                cartes Communes</button>
+        </section>
+
+        <section class="section-market flex flex-wrap gap-2 justify-center items-center lg:hidden ">
+
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+
+                    <div class="swiper-slide">
+                        <div
+                            class="carte_market w-65 h-108 rounded-[15px] flex flex-col justify-center items-center gap-5">
+                            <div
+                                class=" bg-[url(image/carte-6.png)] bg-cover bg-center lg:w-80 w-60 lg:h-112 h-85 flex flex-col justify-end items-center">
+                                <div
+                                    class=" carte text-white relative flex flex-col justify-center items-center bottom-0.5  w-full h-33 lg:h-44 rounded-[10px]">
+                                    <div class="flex justify-center items-center lg:gap-6 gap-6 relative left-2.5">
+                                        <h2
+                                            class="anime rotate-[90deg] lg:text-[24px] text-[18px] absolute  lg:right-44 right-35 ">
+                                            ANIME</h3>
+                                            <div
+                                                class="flex flex-col font-[Poppins] gap-1 w-25 lg:w-35 relative lg:left-6 left-2 lg:gap-1">
+                                                <h5 class="lg:text-[15px] text-[12px] font-[700]">POKI</h5>
+                                                <p class="lg:text-[12px]/3 text-[9px]/2  font-[400] ">Lorem ipsum dolor
+                                                    sit
+                                                    ame Lorem ipsum
+                                                    dolor
+                                                    sit
+                                                    amet
+                                                    consectetur adipisicing elit.</p>
+                                            </div>
+                                            <P class="lg:text-[11px] text-[9px] font-[700] relative top-1">
+                                                prix : 25$
+                                            </P>
+                                    </div>
+                                    <div
+                                        class="flex gap-8 lg:gap-13 lg:text-[24px] text-[20px] font-[700] font-[Lemon]">
+                                        <h2>POKEMON</h2>
+                                        <h3 class="text-[#F1544D]">XX</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex gap-12">
+                                <button class="w-18 h-10 rounded-[4px] text-[12px] bg-[#2F8E44]">ajouter au
+                                    panie</button>
+                                <button class="w-18 h-10 rounded-[4px] text-[12px] bg-[#936C57]">ajouter aux
+                                    favoris</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div
+                            class="carte_market w-65 h-108 rounded-[15px] flex flex-col justify-center items-center gap-5">
+                            <div
+                                class=" bg-[url(image/carte-2.png)] bg-cover bg-center lg:w-80 w-60 lg:h-112 h-85 flex flex-col justify-end items-center">
+                                <div
+                                    class=" carte text-white relative flex flex-col justify-center items-center bottom-0.5  w-full h-33 lg:h-44 rounded-[10px]">
+                                    <div class="flex justify-center items-center lg:gap-6 gap-6 relative left-2.5">
+                                        <h2
+                                            class="anime rotate-[90deg] lg:text-[24px] text-[18px] absolute  lg:right-44 right-35 ">
+                                            ANIME</h3>
+                                            <div
+                                                class="flex flex-col font-[Poppins] gap-1 w-25 lg:w-35 relative lg:left-6 left-2 lg:gap-1">
+                                                <h5 class="lg:text-[15px] text-[12px] font-[700]">POKI</h5>
+                                                <p class="lg:text-[12px]/3 text-[9px]/2  font-[400] ">Lorem ipsum dolor
+                                                    sit
+                                                    ame Lorem ipsum
+                                                    dolor
+                                                    sit
+                                                    amet
+                                                    consectetur adipisicing elit.</p>
+                                            </div>
+                                            <P class="lg:text-[11px] text-[9px] font-[700] relative top-1">
+                                                prix : 25$
+                                            </P>
+                                    </div>
+                                    <div
+                                        class="flex gap-8 lg:gap-13 lg:text-[24px] text-[20px] font-[700] font-[Lemon]">
+                                        <h2>POKEMON</h2>
+                                        <h3 class="text-[#F1544D]">XX</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex gap-12">
+                                <button class="w-18 h-10 rounded-[4px] text-[12px] bg-[#2F8E44]">ajouter au
+                                    panie</button>
+                                <button class="w-18 h-10 rounded-[4px] text-[12px] bg-[#936C57]">ajouter aux
+                                    favoris</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div
+                            class="carte_market w-65 h-108 rounded-[15px] flex flex-col justify-center items-center gap-5">
+                            <div
+                                class=" bg-[url(image/carte-11.png)] bg-cover bg-center lg:w-80 w-60 lg:h-112 h-85 flex flex-col justify-end items-center">
+                                <div
+                                    class=" carte text-white relative flex flex-col justify-center items-center bottom-0.5  w-full h-33 lg:h-44 rounded-[10px]">
+                                    <div class="flex justify-center items-center lg:gap-6 gap-6 relative left-2.5">
+                                        <h2
+                                            class="anime rotate-[90deg] lg:text-[24px] text-[18px] absolute  lg:right-44 right-35 ">
+                                            ANIME</h3>
+                                            <div
+                                                class="flex flex-col font-[Poppins] gap-1 w-25 lg:w-35 relative lg:left-6 left-2 lg:gap-1">
+                                                <h5 class="lg:text-[15px] text-[12px] font-[700]">POKI</h5>
+                                                <p class="lg:text-[12px]/3 text-[9px]/2  font-[400] ">Lorem ipsum dolor
+                                                    sit
+                                                    ame Lorem ipsum
+                                                    dolor
+                                                    sit
+                                                    amet
+                                                    consectetur adipisicing elit.</p>
+                                            </div>
+                                            <P class="lg:text-[11px] text-[9px] font-[700] relative top-1">
+                                                prix : 25$
+                                            </P>
+                                    </div>
+                                    <div
+                                        class="flex gap-8 lg:gap-13 lg:text-[24px] text-[20px] font-[700] font-[Lemon]">
+                                        <h2>POKEMON</h2>
+                                        <h3 class="text-[#FA5220]">XX</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex gap-12">
+                                <button class="w-18 h-10 rounded-[4px] text-[12px] bg-[#2F8E44]">ajouter au
+                                    panie</button>
+                                <button class="w-18 h-10 rounded-[4px] text-[12px] bg-[#936C57]">ajouter aux
+                                    favoris</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <button
+                class=" bg-linear-[#FA5220] h-10 text-black w-80 rounded-tl-[10px] rounded-br-[10px] font-[Belgrano] text-[20px]">les
+                cartes Communes</button>
+        </section>
+
+
+        <section class="section-market flex flex-wrap gap-2 justify-center items-center lg:hidden ">
+
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+
+                    <div class="swiper-slide">
+                        <div
+                            class="carte_market w-65 h-108 rounded-[15px] flex flex-col justify-center items-center gap-5">
+                            <div
+                                class=" bg-[url(image/carte-4.png)] bg-cover bg-center lg:w-80 w-60 lg:h-112 h-85 flex flex-col justify-end items-center">
+                                <div
+                                    class=" carte text-white relative flex flex-col justify-center items-center bottom-0.5  w-full h-33 lg:h-44 rounded-[10px]">
+                                    <div class="flex justify-center items-center lg:gap-6 gap-6 relative left-2.5">
+                                        <h2
+                                            class="anime rotate-[90deg] lg:text-[24px] text-[18px] absolute  lg:right-44 right-35 ">
+                                            ANIME</h3>
+                                            <div
+                                                class="flex flex-col font-[Poppins] gap-1 w-25 lg:w-35 relative lg:left-6 left-2 lg:gap-1">
+                                                <h5 class="lg:text-[15px] text-[12px] font-[700]">POKI</h5>
+                                                <p class="lg:text-[12px]/3 text-[9px]/2  font-[400] ">Lorem ipsum dolor
+                                                    sit
+                                                    ame Lorem ipsum
+                                                    dolor
+                                                    sit
+                                                    amet
+                                                    consectetur adipisicing elit.</p>
+                                            </div>
+                                            <P class="lg:text-[11px] text-[9px] font-[700] relative top-1">
+                                                prix : 25$
+                                            </P>
+                                    </div>
+                                    <div
+                                        class="flex gap-8 lg:gap-13 lg:text-[24px] text-[20px] font-[700] font-[Lemon]">
+                                        <h2>POKEMON</h2>
+                                        <h3 class="text-[#1CB8FB]">XX</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex gap-12">
+                                <button class="w-18 h-10 rounded-[4px] text-[12px] bg-[#2F8E44]">ajouter au
+                                    panie</button>
+                                <button class="w-18 h-10 rounded-[4px] text-[12px] bg-[#936C57]">ajouter aux
+                                    favoris</button>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+            <button
+                class=" bg-linear-[#1CB8FB] h-10 text-black w-80 rounded-tl-[10px] rounded-br-[10px] font-[Belgrano] text-[20px]">les
+                cartes Communes</button>
+        </section>
+
+
+        <section class="section-market flex flex-wrap gap-2 justify-center items-center lg:hidden ">
+
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+
+                    <div class="swiper-slide">
+                        <div
+                            class="carte_market w-65 h-108 rounded-[15px] flex flex-col justify-center items-center gap-5">
+                            <div
+                                class=" bg-[url(image/carte-1.png)] bg-cover bg-center lg:w-80 w-60 lg:h-112 h-85 flex flex-col justify-end items-center">
+                                <div
+                                    class=" carte text-white relative flex flex-col justify-center items-center bottom-0.5  w-full h-33 lg:h-44 rounded-[10px]">
+                                    <div class="flex justify-center items-center lg:gap-6 gap-6 relative left-2.5">
+                                        <h2
+                                            class="anime rotate-[90deg] lg:text-[24px] text-[18px] absolute  lg:right-44 right-35 ">
+                                            ANIME</h3>
+                                            <div
+                                                class="flex flex-col font-[Poppins] gap-1 w-25 lg:w-35 relative lg:left-6 left-2 lg:gap-1">
+                                                <h5 class="lg:text-[15px] text-[12px] font-[700]">POKI</h5>
+                                                <p class="lg:text-[12px]/3 text-[9px]/2  font-[400] ">Lorem ipsum dolor
+                                                    sit
+                                                    ame Lorem ipsum
+                                                    dolor
+                                                    sit
+                                                    amet
+                                                    consectetur adipisicing elit.</p>
+                                            </div>
+                                            <P class="lg:text-[11px] text-[9px] font-[700] relative top-1">
+                                                prix : 25$
+                                            </P>
+                                    </div>
+                                    <div
+                                        class="flex gap-8 lg:gap-13 lg:text-[24px] text-[20px] font-[700] font-[Lemon]">
+                                        <h2>POKEMON</h2>
+                                        <h3 class="text-[#BA41ED]">XX</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex gap-12">
+                                <button class="w-18 h-10 rounded-[4px] text-[12px] bg-[#2F8E44]">ajouter au
+                                    panie</button>
+                                <button class="w-18 h-10 rounded-[4px] text-[12px] bg-[#936C57]">ajouter aux
+                                    favoris</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <button
+                class=" bg-linear-[#BA41ED] h-10 text-black w-80 rounded-tl-[10px] rounded-br-[10px] font-[Belgrano] text-[20px]">les
+                cartes Communes</button>
+        </section>
+
+
+    </main>
+
+    <footer>
+        <section class="section-home flex flex-col justify-center items-center gap-25 lg:flex-row">
+            <img src="/image/logo.png" alt="" class="lg:w-40">
+            <div class="flex gap-5 h-fit">
+                <div class="flex flex-col gap-4">
+                    <h5 class="font-[Poppins] font-[700] text-[20px] text-[#FFFFFF] lg:text-[20px]">Company</h4>
+                        <ul class="text-[#CACACA] text-[18px]">
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Team</a></li>
+                            <li><a href="#">Mobile</a></li>
+                        </ul>
+                </div>
+
+                <div class="flex flex-col gap-4">
+                    <h5 class="font-[Poppins] font-[700] text-[20px] text-[#FFFFFF]">Contact</h4>
+                        <ul class="text-[#CACACA] text-[18px]">
+                            <li><a href="#">Help/FAQ</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">Address</a></li>
+                        </ul>
+                </div>
+
+                <div class="flex flex-col gap-4">
+                    <h5 class="font-[Poppins] font-[700] text-[20px] text-[#FFFFFF]">More</h4>
+                        <ul class="text-[#CACACA] text-[18px]">
+                            <li><a href="#">Flights</a></li>
+                            <li><a href="#">Hotels</a></li>
+                            <li><a href="#">Booking</a></li>
+                        </ul>
+                </div>
+            </div>
+            <div class="flex flex-col items-center gap-5">
+                <div class="flex">
+                    <a href="#"><img src="/image/fb.png" alt="icon fb"></a>
+                    <a href="#"><img src="/image/insta.png" alt="icon intagram"></a>
+                    <a href="#"><img src="/image/twitter.png" alt="icon twitter"></a>
+                </div>
+                <h4 class="text-[#CACACA]">Discover our app</h4>
+                <div class="flex">
+                    <a href="#"><img src="/image/Google Play.png" alt="icon Google Play"></a>
+                    <a href="#"><img src="/image/Play Store.png" alt="icon Play Store"></a>
+                </div>
+            </div>
+        </section>
+    </footer>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper(".mySwiper", {});
+    </script>
+
+</body>
+
+</html>
