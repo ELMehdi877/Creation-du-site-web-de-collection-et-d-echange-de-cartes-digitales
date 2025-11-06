@@ -1,3 +1,15 @@
+var swiper = new Swiper(".mySwiper", {});
+
+
+
+const menuHamburger = document.querySelector(".open_menu")
+const navLinks = document.querySelector(".open")
+
+menuHamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('mobile-menu')
+})
+
+
 const product = [
         {
                 name: 'poki',
@@ -35,7 +47,12 @@ const product = [
                 image: 'image/carte-4.png',
                 color: 'blue'
         },
-        {
+       
+];
+
+
+const product2 =[
+         {
                 name: 'lopi',
                 price: 20,
                 image: 'image/carte-10.png',
@@ -71,25 +88,8 @@ const product = [
                 image: 'image/carte-7.png',
                 color: 'orange'
         },
-]
 
-
-const product2 =[
-        {
-                name: 'lopi',
-                price: 20,
-                image: 'image/carte-10.png',
-                color: 'green'
-        },
-        {
-                name: 'mio',
-                price: 20,
-                image: 'image/carte-11.png',
-                color: 'orange'
-        },
-       
-
-]
+];
 
 const btn2 = document.querySelector("#btn2")
 btn2.addEventListener('click', () => {
@@ -237,16 +237,7 @@ const filtrage = [
         },
 ]
 
-var swiper = new Swiper(".mySwiper", {});
 
-
-
-const menuHamburger = document.querySelector(".open_menu")
-const navLinks = document.querySelector(".open")
-
-menuHamburger.addEventListener('click', () => {
-        navLinks.classList.toggle('mobile-menu')
-})
 
 const carte_market = document.querySelector('#carte_market')
 console.log(carte_market)
@@ -312,7 +303,7 @@ filtrage.forEach((el) => {
 })
 
 function afiche_carte(){
-        
+
 }
 
 filtrage.forEach((el) => {
