@@ -47,12 +47,12 @@ const product = [
                 image: 'image/carte-4.png',
                 color: 'blue'
         },
-       
+
 ];
 
 
-const product2 =[
-         {
+const product2 = [
+        {
                 name: 'lopi',
                 price: 20,
                 image: 'image/carte-10.png',
@@ -94,12 +94,12 @@ const product2 =[
 const btn2 = document.querySelector("#btn2")
 btn2.addEventListener('click', () => {
         product.forEach((el) => {
-        carte_market.innerHTML = `
+                carte_market.innerHTML = `
     
     `
-})
+        })
         product2.forEach((el) => {
-        carte_market.innerHTML += `
+                carte_market.innerHTML += `
     
     <div
                 class="carte_market w-65 h-108 lg:w-90 lg:h-150 rounded-[15px] flex flex-col justify-center items-center gap-5">
@@ -145,20 +145,20 @@ btn2.addEventListener('click', () => {
      
     
     `
-})
-        
+        })
+
 })
 
 
 const btn1 = document.querySelector("#btn1")
 btn1.addEventListener('click', () => {
         product2.forEach((el) => {
-        carte_market.innerHTML = `
+                carte_market.innerHTML = `
     
     `
-})
+        })
         product.forEach((el) => {
-        carte_market.innerHTML += `
+                carte_market.innerHTML += `
     
     <div
                 class="carte_market w-65 h-108 lg:w-90 lg:h-150 rounded-[15px] flex flex-col justify-center items-center gap-5">
@@ -204,8 +204,8 @@ btn1.addEventListener('click', () => {
      
     
     `
-})
-        
+        })
+
 })
 
 
@@ -214,7 +214,7 @@ btn1.addEventListener('click', () => {
 
 
 
-const filtrage = [
+const barre_filtrage = [
         {
                 name: 'Communes',
                 color: 'green',
@@ -294,7 +294,7 @@ product.forEach((el) => {
 
 const buttons_filtrage = document.querySelector('#filtrage')
 
-filtrage.forEach((el) => {
+barre_filtrage.forEach((el) => {
         buttons_filtrage.innerHTML += `
         <li id="btn_${el.color}" class=" bg-${el.color}-500  text-black w-35 flex justify-center rounded-tl-[10px] rounded-br-[10px]">
                     ${el.name}</li>
@@ -302,15 +302,19 @@ filtrage.forEach((el) => {
         `
 })
 
-function afiche_carte(){
+function afiche_carte() {
+        if (color_btn == 'btn_green') {
+
+        }
 
 }
 
-filtrage.forEach((el) => {
+barre_filtrage.forEach((el) => {
         const color_btn = document.getElementById(`btn_${el.color}`);
-        // console.log(color_btn)
+        console.log(color_btn)
         color_btn.addEventListener('click', () => {
                 
+
         }
         )
 })
