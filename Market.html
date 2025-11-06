@@ -23,7 +23,7 @@
             class="flex justify-around  items-center fixed w-5/5 h-20 z-10 top-0">
             <img src="image/logo.png" alt="logo">
 
-            <ul 
+            <ul
                 class="open transition-all duration-800 bg-black/80 lg:bg-transparent right-[-100%] lg:right-0 fixed top-0 w-[70%] h-screen lg:flex lg:h-20 lg:relative lg:flex-row lg:gap-12  text-white flex flex-col gap-10  items-center justify-center lg:block">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="Guid.html">Guid</a></li>
@@ -39,12 +39,12 @@
     </header>
 
     <main style="padding: 130px 0;"
-        class=" bg-[url(image/bg-8.png)] bg-cover grid grid-cols-1 gap-8 bg-center lg:flex lg:flex-col items-center lg:h-500 justify-center">
+        class=" bg-[url(image/bg-8.png)] bg-cover grid grid-cols-1 gap-8 bg-center lg:flex lg:flex-col items-center h-auto justify-center">
 
         <section
             class="hidden lg:block lg:flex justify-center items-center lg:w-350 lg:h-15 lg:bg-linear-[#1D1C1C,#A67878] rounded-[10px]">
-            <ul class="font-[Belgrano] flex  gap-12 text-white text-[20px]">
-                <li class=" bg-[#1DFBB8]  text-black w-35 flex justify-center rounded-tl-[10px] rounded-br-[10px]">
+            <ul id="filtrage" class="font-[Belgrano] flex  gap-12 text-white text-[20px]">
+                <!-- <li class=" bg-[#1DFBB8]  text-black w-35 flex justify-center rounded-tl-[10px] rounded-br-[10px]">
                     Communes</li>
                 <li class=" bg-[#EEB922]  text-black w-35 flex justify-center rounded-tl-[10px] rounded-br-[10px]">
                     Legendar</li>
@@ -53,12 +53,12 @@
                 <li class=" bg-[#1CB8FB]  text-black w-35 flex justify-center rounded-tl-[10px] rounded-br-[10px]">
                     Mythic</li>
                 <li class=" bg-[#BA41ED]  text-black w-35 flex justify-center rounded-tl-[10px] rounded-br-[10px]">Epic
-                </li>
+                </li> -->
             </ul>
         </section>
-        <section class="hidden lg:block lg:grid lg:grid-cols-3 gap-12 items-center">
+        <section id="carte_market" class="hidden lg:block lg:grid lg:grid-cols-3 gap-12 items-center">
 
-            <div
+            <!-- <div
                 class="carte_market w-65 h-108 lg:w-90 lg:h-150 rounded-[15px] flex flex-col justify-center items-center gap-5">
                 <div
                     class=" bg-[url(image/carte-6.png)] bg-cover bg-center lg:w-80 w-60 lg:h-112 h-85 flex flex-col justify-end items-center">
@@ -98,9 +98,9 @@
                         aux
                         favoris</button>
                 </div>
-            </div>
+            </div> -->
 
-            <div
+            <!-- <div
                 class="carte_market w-65 h-108 lg:w-90 lg:h-150 rounded-[15px] flex flex-col justify-center items-center gap-5">
                 <div
                     class=" bg-[url(image/carte-1.png)] bg-cover bg-center lg:w-80 w-60 lg:h-112 h-85 flex flex-col justify-end items-center">
@@ -308,9 +308,10 @@
                         aux
                         favoris</button>
                 </div>
-            </div>
+            </div> -->
 
         </section>
+        
         <div class="lg:flex gap-10 hidden lg:block">
             <a href="#"><button
                     class="bg-[#5B1E1E] rounded-[5px] w-10 h-10 text-white text-[18px] font-[Poppins] font-[700]">1</button></a>
@@ -775,7 +776,7 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <!-- Initialize Swiper -->
-    
+
     <script src="scripte.js"> </script>
 </body>
 
