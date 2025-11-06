@@ -103,8 +103,17 @@ footer{
     }
 
 
-    .open{
-      right: 0 ;
+    /* .open{
+      ;
+    } */
+    
+    .mobile-menu{
+      right: 0;
+    }
+
+    button:hover{
+      transform: scale(1.1);
+      transition: .3s;
     }
 
 
