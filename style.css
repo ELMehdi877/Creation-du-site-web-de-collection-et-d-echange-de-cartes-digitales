@@ -111,6 +111,9 @@ footer{
       right: 0;
     }
 
+    .open_rarter{
+      right: 25%;
+    }
     button:hover{
       transform: scale(1.1);
       transition: .3s;

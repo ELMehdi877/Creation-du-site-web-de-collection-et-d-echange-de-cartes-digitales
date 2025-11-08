@@ -32,9 +32,21 @@
                 <li><a href="Favorite.html">Favorite</a></li>
             </ul>
 
+            <button class="open_rarter  left-0 relative  z-10 bg-red-500 w-15 h-13 rounded-[10px] text-[20px] ">rarter</button>
+            <!-- <ul style="background: rgba(255, 0, 0, 0.655);" class="rarter transition-all duration-800 fixed flex flex-col gap-5 right-[100%] w-60 h-screen top-0 justify-center items-center">
+                <li class=" bg-[#1DFBB8]  text-black w-50 flex justify-center rounded-tl-[10px] rounded-br-[10px]">
+                    Communes</li>
+                <li class=" bg-[#EEB922]  text-black w-50 flex justify-center rounded-tl-[10px] rounded-br-[10px]">
+                    Legendar</li>
+                <li class=" bg-[#FA5220]  text-black w-50 flex justify-center rounded-tl-[10px] rounded-br-[10px]">Rares
+                </li>
+                <li class=" bg-[#1CB8FB]  text-black w-50 flex justify-center rounded-tl-[10px] rounded-br-[10px]">
+                    Mythic</li>
+                <li class=" bg-[#BA41ED]  text-black w-50 flex justify-center rounded-tl-[10px] rounded-br-[10px]">Epic
+                </li>
+            </ul> -->
             <img src="image/shopp.png" alt="icon">
             <img src="/image/menu.png" alt="menu" class="open_menu relative lg:hidden">
-
         </nav>
     </header>
 
@@ -42,8 +54,8 @@
         class=" bg-[url(image/bg-8.png)] bg-cover grid grid-cols-1 gap-8 bg-center lg:flex lg:flex-col items-center h-auto justify-center">
 
         <section
-            class="hidden lg:block lg:flex justify-center items-center lg:w-350 lg:h-15 lg:bg-linear-[#1D1C1C,#A67878] rounded-[10px]">
-            <ul id="filtrage" class="font-[Belgrano] flex  gap-12 text-white text-[20px]">
+            class=" rarter transition-all duration-800 fixed top-20 right-[100%] lg:right-18 lg:top-30 z-10 lg:block lg:flex justify-center items-center h- w-[50%] lg:w-[90%] lg:h-15 bg-linear-[#1D1C1C,#A67878] rounded-[10px]">
+            <ul id="filtrage" class=" font-[Belgrano] flex flex-col lg:flex-row gap-5 lg:gap-12 justify-center items-center text-white text-[20px]">
                 <!-- <li class=" bg-[#1DFBB8]  text-black w-35 flex justify-center rounded-tl-[10px] rounded-br-[10px]">
                     Communes</li>
                 <li class=" bg-[#EEB922]  text-black w-35 flex justify-center rounded-tl-[10px] rounded-br-[10px]">
@@ -56,7 +68,7 @@
                 </li> -->
             </ul>
         </section>
-        <section id="carte_market" class="hidden lg:block lg:grid lg:grid-cols-3 gap-12 items-center">
+        <section id="cartes_market" class="flex flex-col relative lg:top-30 lg:block lg:grid lg:grid-cols-3 gap-12 items-center">
 
             <!-- <div
                 class="carte_market w-65 h-108 lg:w-90 lg:h-150 rounded-[15px] flex flex-col justify-center items-center gap-5">
@@ -311,15 +323,15 @@
             </div> -->
 
         </section>
-        
+
         <div class="lg:flex gap-10 hidden lg:block">
-            <a href="#"><button
-                 id="btn1" class="bg-[#5B1E1E] rounded-[5px] w-10 h-10 text-white text-[18px] font-[Poppins] font-[700]">1</button></a>
-            <a href="#"><button
-                    id="btn2" class="bg-[#5B1E1E] rounded-[5px] w-10 h-10 text-white text-[18px] font-[Poppins] font-[700]">2</button></a>
+            <a href="#"><button id="btn1"
+                    class="bg-[#5B1E1E] rounded-[5px] w-10 h-10 text-white text-[18px] font-[Poppins] font-[700]">1</button></a>
+            <a href="#"><button id="btn2"
+                    class="bg-[#5B1E1E] rounded-[5px] w-10 h-10 text-white text-[18px] font-[Poppins] font-[700]">2</button></a>
         </div>
 
-        <section class="section-market flex flex-wrap gap-2 justify-center items-center lg:hidden ">
+        <!-- <section class="section-market flex flex-wrap gap-2 justify-center items-center lg:hidden ">
 
             <div class="swiper mySwiper lg:hidden">
                 <div class="swiper-wrapper lg:hidden">
@@ -721,7 +733,7 @@
             <button
                 class=" bg-linear-[#BA41ED] h-10 text-black w-80 rounded-tl-[10px] rounded-br-[10px] font-[Belgrano] text-[20px]">les
                 cartes Communes</button>
-        </section>
+        </section>  -->
 
 
     </main>
