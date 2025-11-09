@@ -32,18 +32,19 @@
                 <li><a href="Favorite.html">Favorite</a></li>
             </ul>
 
+            <button class="open_rarter lg:hidden left-0 relative  z-10 bg-red-500 w-15 h-13 rounded-[10px] text-[20px] ">rarter</button>
+           
             <img src="image/shopp.png" alt="icon">
             <img src="/image/menu.png" alt="menu" class="open_menu relative lg:hidden">
-
         </nav>
     </header>
 
     <main style="padding: 130px 0;"
         class=" bg-[url(image/bg-8.png)] bg-cover grid grid-cols-1 gap-8 bg-center lg:flex lg:flex-col items-center h-auto justify-center">
 
-        <section
-            class="hidden lg:block lg:flex justify-center items-center lg:w-350 lg:h-15 lg:bg-linear-[#1D1C1C,#A67878] rounded-[10px]">
-            <ul id="filtrage" class="font-[Belgrano] flex  gap-12 text-white text-[20px]">
+         <section
+            class=" rarter transition-all duration-800 fixed top-20 right-[100%] lg:right-18 lg:top-30 z-10 lg:block lg:flex justify-center items-center h- w-[50%] lg:w-[90%] lg:h-15 bg-linear-[#1D1C1C,#A67878] rounded-[10px]">
+            <ul  class="filtrage font-[Belgrano] flex flex-col lg:flex-row gap-5 lg:gap-12 justify-center items-center text-white text-[20px]">
                 <!-- <li class=" bg-[#1DFBB8]  text-black w-35 flex justify-center rounded-tl-[10px] rounded-br-[10px]">
                     Communes</li>
                 <li class=" bg-[#EEB922]  text-black w-35 flex justify-center rounded-tl-[10px] rounded-br-[10px]">
@@ -56,7 +57,7 @@
                 </li> -->
             </ul>
         </section>
-        <section id="section_favoris" class="hidden lg:block lg:grid lg:grid-cols-3 gap-12 items-center">
+        <section id="section_favoris" class="flex flex-col relative lg:top-30 lg:block lg:grid lg:grid-cols-3 gap-12 items-center">
 
         </section>
         

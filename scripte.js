@@ -1,202 +1,198 @@
+
+
+
+
 var swiper = new Swiper(".mySwiper", {});
-
-
-
+//Menu toggle
 const menuHamburger = document.querySelector(".open_menu")
 const navLinks = document.querySelector(".open")
 
 menuHamburger.addEventListener('click', () => {
-        navLinks.classList.toggle('mobile-menu')
+    navLinks.classList.toggle('mobile-menu')
 })
 
+//Rarter toggle
 const openRarter = document.querySelector(".open_rarter")
 const Rarter = document.querySelector(".rarter")
-openRarter.addEventListener('click',() => {
-        Rarter.classList.toggle('open_rarter')
+if(openRarter){
+openRarter.addEventListener('click', () => {
+    Rarter.classList.toggle('open_rarter')
 })
+}
 
-
+//Products
 const product = [
-        {
-                id: 1,
-                name: 'poki',
-                price: 20,
-                image: 'image/carte-6.png',
-                color: 'orange'
-        },
-        {
-                id: 2,
-                name: 'polo',
-                price: 10,
-                image: 'image/carte-1.png',
-                color: 'purple'
-        },
-        {
-                id: 3,
-                name: 'kiki',
-                price: 15,
-                image: 'image/carte-5.png',
-                color: 'green'
-        },
-        {
-                id: 4,
-                name: 'lolo',
-                price: 20,
-                image: 'image/carte-2.png',
-                color: 'orange'
-        },
-        {
-                id: 5,
-                name: 'ninii',
-                price: 20,
-                image: 'image/carte-3.png',
-                color: 'yellow'
-        },
-        {
-                id: 6,
-                name: 'nayno',
-                price: 20,
-                image: 'image/carte-4.png',
-                color: 'blue'
-        },
-        {
-                id: 7,
-                name: 'lopi',
-                price: 20,
-                image: 'image/carte-10.png',
-                color: 'green'
-        },
-        {
-                id: 8,
-                name: 'mio',
-                price: 20,
-                image: 'image/carte-11.png',
-                color: 'orange'
-        },
-        {
-                id: 9,
-                name: 'hola',
-                price: 20,
-                image: 'image/carte-12.png',
-                color: 'orange'
-        },
-        {
-                id: 10,
-                name: 'gigo',
-                price: 18,
-                image: 'image/carte-9.png',
-                color: 'yellow'
-        },
-        {
-                id: 11,
-                name: 'poha',
-                price: 50,
-                image: 'image/carte-8.png',
-                color: 'blue'
-        },
-        {
-                id: 12,
-                name: 'fiane',
-                price: 2,
-                image: 'image/carte-7.png',
-                color: 'orange'
-        },
+    {
+        id: 1,
+        name: 'poki',
+        price: 20,
+        image: 'image/carte-6.png',
+        color: 'orange'
+    },
+    {
+        id: 2,
+        name: 'polo',
+        price: 10,
+        image: 'image/carte-1.png',
+        color: 'purple'
+    },
+    {
+        id: 3,
+        name: 'kiki',
+        price: 15,
+        image: 'image/carte-5.png',
+        color: 'green'
+    },
+    {
+        id: 4,
+        name: 'lolo',
+        price: 20,
+        image: 'image/carte-2.png',
+        color: 'orange'
+    },
+    {
+        id: 5,
+        name: 'ninii',
+        price: 20,
+        image: 'image/carte-3.png',
+        color: 'yellow'
+    },
+    {
+        id: 6,
+        name: 'nayno',
+        price: 20,
+        image: 'image/carte-4.png',
+        color: 'blue'
+    },
+    {
+        id: 7,
+        name: 'lopi',
+        price: 20,
+        image: 'image/carte-10.png',
+        color: 'green'
+    },
+    {
+        id: 8,
+        name: 'mio',
+        price: 20,
+        image: 'image/carte-11.png',
+        color: 'orange'
+    },
+    {
+        id: 9,
+        name: 'hola',
+        price: 20,
+        image: 'image/carte-12.png',
+        color: 'orange'
+    },
+    {
+        id: 10,
+        name: 'gigo',
+        price: 18,
+        image: 'image/carte-9.png',
+        color: 'yellow'
+    },
+    {
+        id: 11,
+        name: 'poha',
+        price: 50,
+        image: 'image/carte-8.png',
+        color: 'blue'
+    },
+    {
+        id: 12,
+        name: 'fiane',
+        price: 2,
+        image: 'image/carte-7.png',
+        color: 'orange'
+    },
 
 ];
 
-
-
+//Barre de filter
 const barre_filtrage = [
-        {
-                name: 'Communes',
-                color: 'green',
-        },
-        {
-                name: 'Rares',
-                color: 'yellow',
-        },
-        {
-                name: 'Legendar',
-                color: 'orange',
-        },
-        {
-                name: 'Mythic',
-                color: 'blue',
-        },
-        {
-                name: 'Epic',
-                color: 'purple',
-        },
+    {
+        name: 'Communes',
+        color: 'green',
+    },
+    {
+        name: 'Rares',
+        color: 'yellow',
+    },
+    {
+        name: 'Legendar',
+        color: 'orange',
+    },
+    {
+        name: 'Mythic',
+        color: 'blue',
+    },
+    {
+        name: 'Epic',
+        color: 'purple',
+    },
 ]
-const buttons_filtrage = document.querySelector('#filtrage')
 
-barre_filtrage.forEach((el) => {
-        // if(buttons_filtrage)
+//Affiche la barre de filter
+const buttons_filtrage = document.querySelector('.filtrage')
+if (buttons_filtrage) {
+    barre_filtrage.forEach((el) => {
         buttons_filtrage.innerHTML += `
         <li id="btn_${el.color}" class=" bg-${el.color}-500  text-black w-35 flex justify-center rounded-tl-[10px] rounded-br-[10px]">
                     ${el.name}</li>
-
         `
-})
+    })
+    //Add event listeners to filter buttons
+    barre_filtrage.forEach((el) => {
 
-barre_filtrage.forEach((el) => {
-        // console.log(el);
-        if (!el) return;
         const color_btn = document.getElementById(`btn_${el.color}`);
-        // console.log(color_btn)
-        color_btn.addEventListener('click', () => {
+
+        if (color_btn)
+            color_btn.addEventListener('click', () => {
                 afiche_carte(el.color)
-
-        }
-        )
-})
-
-
-const copy_product = [
-
-]
-
-
-product.forEach((el) => {
-
-        copy_product.push(el)
-})
-
-
-// localStorage favoris
-let tous_favoris = JSON.parse(localStorage.getItem('favoris')) || []
-console.log(tous_favoris);
-
-function ajoute_favoris(id) {
-        // console.log( product.find(el => el.id === id));
-        const el_favoris = product.find(el => el.id === id);
-        const isExist = tous_favoris.some(element => element.id === id)
-        if (!isExist) {
-                tous_favoris.push(el_favoris)
-                console.log(tous_favoris);
-        }
-        else {
-                return tous_favoris
-        }
-        // localStorage.removeItem("favoris")
-        localStorage.setItem("favoris", JSON.stringify(tous_favoris))
-
+            }
+            )
+    })
 }
 
 
 
+
+// localStorage favoris
+let tous_favoris = JSON.parse(localStorage.getItem('favoris')) || []
+
+//fonction d'ajoute au favoris
+function ajoute_favoris(id) {
+    const el_favoris = product.find(el => el.id === id);
+    if (!el_favoris)
+        return;
+
+    const isExist = tous_favoris.some(element => element.id === id)
+    if (!isExist) {
+        tous_favoris.push(el_favoris)
+        localStorage.setItem("favoris", JSON.stringify(tous_favoris));
+        affiche_favoris();
+    }
+    else {
+        alert(`${el_favoris.name} est déja dans les favoris`)
+    }
+}
+
+
+//filtre and afiche cards
 const carte_market = document.getElementById('cartes_market')
 
-function afiche_carte(el) {
-        // console.log(el);
-        carte_market.innerHTML = ''
-        // if(!el)return;
-        const color = el === undefined ? 'all' : el
-        // console.log(color);
-        const filter_product = copy_product.filter(el => el.color === color || color === 'all')
-        // console.log(filter_product)
-        filter_product.forEach((el) => {
-                carte_market.innerHTML += `
+function afiche_carte(filterColor) {
+    if (!carte_market)
+        return;
+
+    carte_market.innerHTML = ''
+
+    const color = filterColor === undefined ? 'all' : filterColor
+    const filter_product = product.filter(el => el.color === color || color === 'all')
+
+    filter_product.forEach((el) => {
+        carte_market.innerHTML += `
     
     <div
                 class="carte_market w-65 h-108 lg:w-90 lg:h-150 rounded-[15px] flex flex-col justify-center items-center gap-5">
@@ -239,13 +235,9 @@ function afiche_carte(el) {
                         favoris</button>
                 </div>
             </div>
-     
-    
     `
-        })
+    })
 }
-afiche_carte()
-
 
 // product.forEach((el)=>{
 //         carte_market.innerHTML += `
@@ -297,12 +289,14 @@ afiche_carte()
 // })
 
 
+function affiche_favoris() {
+    const Section_favoris = document.getElementById('section_favoris')
+    if (!Section_favoris)
+        return;
+    //initialiser la section favoris
+    Section_favoris.innerHTML = ''
 
-const Section_favoris = document.getElementById('section_favoris')
-console.log(Section_favoris);
-tous_favoris.forEach((el) => {
-        Section_favoris.innerHTML = ''
-        if(Section_favoris)
+    tous_favoris.forEach((el) => {
         Section_favoris.innerHTML += `
     
     <div
@@ -340,14 +334,14 @@ tous_favoris.forEach((el) => {
                         class="w-18 h-10 lg:w-22 lg:h-13 rounded-[4px] text-[12px] lg:text-[15px] text-white bg-[#2F8E44]">ajouter
                         au
                         panie</button>
-                    <button onclick="ajoute_favoris(${el.id})"
-                        class="w-18 h-10 lg:w-22 lg:h-13 rounded-[4px] text-[12px] lg:text-[15px] text-white bg-[#936C57]">ajouter
-                        aux
-                        favoris</button>
+                    <button onclick="supprimer_favoris(${el.id})"
+                        class="w-18 h-10 lg:w-22 lg:h-13 rounded-[4px] text-[12px] lg:text-[15px] text-white bg-red-500">Supprimer</button>
                 </div>
             </div>
-     
-    
     `
+    })
+}
 
-})
+
+afiche_carte();
+affiche_favoris();
