@@ -14,10 +14,10 @@ menuHamburger.addEventListener('click', () => {
 //Rarter toggle
 const openRarter = document.querySelector(".open_rarter")
 const Rarter = document.querySelector(".rarter")
-if(openRarter){
-openRarter.addEventListener('click', () => {
-    Rarter.classList.toggle('open_rarter')
-})
+if (openRarter) {
+    openRarter.addEventListener('click', () => {
+        Rarter.classList.toggle('open_rarter')
+    })
 }
 
 //Products
@@ -160,7 +160,7 @@ if (buttons_filtrage) {
 
 // localStorage favoris
 let tous_favoris = JSON.parse(localStorage.getItem('favoris')) || []
-
+let tous_panier = JSON.parse(localStorage.getItem("panier")) || []
 //fonction d'ajoute au favoris
 function ajoute_favoris(id) {
     const el_favoris = product.find(el => el.id === id);
@@ -176,6 +176,13 @@ function ajoute_favoris(id) {
     else {
         alert(`${el_favoris.name} est déja dans les favoris`)
     }
+}
+
+//remove to favoris
+function supprimer_favoris(id){
+    tous_favoris=tous_favoris.filter(el => el.id!==id)
+    localStorage.setItem("favoris",JSON.stringify(tous_favoris))
+    affiche_favoris()
 }
 
 
@@ -225,7 +232,7 @@ function afiche_carte(filterColor) {
                     </div>
                 </div>
                 <div class="flex gap-12">
-                    <button 
+                    <button onclick="ajoute_panier(${el.id})"
                         class="w-18 h-10 lg:w-22 lg:h-13 rounded-[4px] text-[12px] lg:text-[15px] text-white bg-[#2F8E44]">ajouter
                         au
                         panie</button>
@@ -330,11 +337,11 @@ function affiche_favoris() {
                     </div>
                 </div>
                 <div class="flex gap-12">
-                    <button 
+                    <button onclick="ajoute_panier_favoris(${el.id})"
                         class="w-18 h-10 lg:w-22 lg:h-13 rounded-[4px] text-[12px] lg:text-[15px] text-white bg-[#2F8E44]">ajouter
                         au
                         panie</button>
-                    <button onclick="supprimer_favoris(${el.id})"
+                    <button  onclick="supprimer_favoris(${el.id})"
                         class="w-18 h-10 lg:w-22 lg:h-13 rounded-[4px] text-[12px] lg:text-[15px] text-white bg-red-500">Supprimer</button>
                 </div>
             </div>
@@ -345,3 +352,103 @@ function affiche_favoris() {
 
 afiche_carte();
 affiche_favoris();
+
+
+
+//function to localstorage panier
+function ajoute_panier(id) {
+    const el_panier = product.find(el => el.id === id)
+    if (!el_panier)
+        return
+    const isExist_panier = tous_panier.some(el => el.id === id)
+    if (!isExist_panier) {
+        tous_panier.push(el_panier)
+        localStorage.setItem("panier", JSON.stringify(tous_panier))
+        affiche_panie()
+    }
+}
+
+//function add to panier
+function ajoute_panier_favoris(id){
+    const el_panier_favoris=tous_favoris.find(el => el.id===id)
+    if(!el_panier_favoris)
+        return
+    const isExist_dans_panier=tous_panier.some(el => el.id === id)
+    if(!isExist_dans_panier){
+        tous_panier.push(el_panier_favoris)
+        localStorage.setItem("panier", JSON.stringify(tous_panier))
+        affiche_panie()
+    }
+}
+//function to affiche the panier 
+function affiche_panie() {
+    const section_panier = document.getElementById('section_panier')
+    if (!section_panier)
+        return
+    section_panier.innerHTML = ''
+    tous_panier.forEach((el) => {
+        section_panier.innerHTML += `
+
+        <div style="padding: 10px 0;"
+            class="bg-linear-[45deg,#8D6464,#502F2F] lg:w-200 w-80 rounded-[15px] flex lg:flex-row lg:items-center flex-wrap justify-center lg:justify-around items-center gap-5">
+            <div
+                class=" bg-[url(${el.image})] bg-cover bg-center lg:w-[140px] w-[204px] lg:h-[197px] h-[287px] flex flex-col justify-end items-center">
+                <div
+                    class=" carte text-white relative flex flex-col justify-center items-center bottom-0.5  w-full h-[114px] lg:h-[78px] rounded-[10px]">
+                    <div class="flex justify-center items-center lg:gap-10 gap-12 relative  lg:right-2 ">
+                        <h2 class="anime rotate-[90deg] lg:text-[11px] text-[16px] absolute right-31.5 lg:right-19 ">
+                            ANIME</h3>
+                            <div class="flex flex-col font-[Poppins] w-[80px] lg:w-[55px] relative lg:left-9 left-6 ">
+                                <h5 class="lg:text-[7px] text-[10px] font-[700]">${el.name}</h5>
+                                <p class="lg:text-[5px]/1.5 text-[7px]/2  font-[400] ">Lorem ipsum dolor
+                                    sit
+                                    ame Lorem ipsum
+                                    dolor
+                                    sit
+                                    amet
+                                    consectetur adipisicing elit.</p>
+                            </div>
+                            <P class="lg:text-[5px] text-[7px] font-[700] relative top-1">
+                                prix : ${el.price}$
+                            </P>
+                    </div>
+                    <div class="flex gap-12 lg:gap-5 lg:text-[11px] text-[16px] font-[700] font-[Lemon]">
+                        <h2>POKEMON</h2>
+                        <h3 class="text-${el.color}-500">XX</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="text-white text-[30px] lg:text-[50px]">
+                <p>nom</p>
+                <p>Quality</p>
+                <p>prix</p>
+            </div>
+            <div class="bg-white h-14 w-25 flex gap-2 justify-center rounded-[5px] items-center">
+                <button class="bg-red-500 w-5 text-white">-</button>
+                <p class="  w-5 text-center border-2 rounded-[5px]">0</p>
+                <button class="bg-green-700 w-5 text-white">+</button>
+            </div>
+
+        </div>
+        `
+    })
+}
+//function to open the panier
+affiche_panie()
+
+const open_panier = document.querySelector('.open_panier')
+const acheter_panier = document.querySelector('#acheter_panier')
+if (open_panier) {
+    open_panier.addEventListener('click', () => {
+        acheter_panier.classList.toggle('open_panier')
+    })
+}
+
+//function to clear the panier
+
+function clear_panier(){
+    tous_panier=[]
+    localStorage.setItem("panier",JSON.stringify(tous_panier))
+    alert("sumprime")
+    affiche_panie()
+}

@@ -24,7 +24,7 @@
             <img src="image/logo.png" alt="logo">
 
             <ul
-                class="open transition-all duration-800 bg-black/80 lg:bg-transparent right-[-100%] lg:right-0 fixed top-0 w-[70%] h-screen lg:flex lg:h-20 lg:relative lg:flex-row lg:gap-12  text-white flex flex-col gap-10  items-center justify-center lg:block">
+                class="open transition-all duration-800 z-13 bg-black/80 lg:bg-transparent right-[-100%] lg:right-0 fixed top-0 w-[70%] h-screen lg:flex lg:h-20 lg:relative lg:flex-row lg:gap-12  text-white flex flex-col gap-10  items-center justify-center lg:block">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="Guid.html">Guid</a></li>
                 <li><a href="Market.html">Market</a></li>
@@ -32,11 +32,65 @@
                 <li><a href="Favorite.html">Favorite</a></li>
             </ul>
 
-            <button class="open_rarter lg:hidden left-0 relative  z-10 bg-red-500 w-15 h-13 rounded-[10px] text-[20px] ">rarter</button>
-           
-            <img src="image/shopp.png" alt="icon">
-            <img src="/image/menu.png" alt="menu" class="open_menu relative lg:hidden">
+            <button
+                class="open_rarter lg:hidden left-0 relative  z-10 bg-red-500 w-15 h-13 rounded-[10px] text-[20px] ">rarter</button>
+
+            <img src="image/shopp.png" alt="icon" class="open_panier">
+            <img src="/image/menu.png" alt="menu" class="open_menu z-14 relative lg:hidden">
         </nav>
+        <section id="acheter_panier" style="padding: 10px 0;" class="fixed flex flex-col items-center gap-10 transition-all duration-800 z-12 top-20 right-[-200%] lg:right-[-100%] w-100 lg:w-210 bg-gray-400/50">
+            <section  id="section_panier"
+                class=" h-120 overflow-y-scroll  flex flex-col items-center gap-5">
+                <!-- <div style="padding: 10px 0;"
+            class="bg-linear-[45deg,#8D6464,#502F2F] lg:w-200 w-80 rounded-[15px] flex lg:flex-row lg:items-center flex-wrap justify-center lg:justify-around items-center gap-5">
+            <div
+                class=" bg-[url(image/carte-6.png)] bg-cover bg-center lg:w-[140px] w-[204px] lg:h-[197px] h-[287px] flex flex-col justify-end items-center">
+                <div
+                    class=" carte text-white relative flex flex-col justify-center items-center bottom-0.5  w-full h-[114px] lg:h-[78px] rounded-[10px]">
+                    <div class="flex justify-center items-center lg:gap-10 gap-12 relative  lg:right-2 ">
+                        <h2 class="anime rotate-[90deg] lg:text-[11px] text-[16px] absolute right-31.5 lg:right-19 ">
+                            ANIME</h3>
+                            <div class="flex flex-col font-[Poppins] w-[80px] lg:w-[55px] relative lg:left-9 left-6 ">
+                                <h5 class="lg:text-[7px] text-[10px] font-[700]">POKI</h5>
+                                <p class="lg:text-[5px]/1.5 text-[7px]/2  font-[400] ">Lorem ipsum dolor
+                                    sit
+                                    ame Lorem ipsum
+                                    dolor
+                                    sit
+                                    amet
+                                    consectetur adipisicing elit.</p>
+                            </div>
+                            <P class="lg:text-[5px] text-[7px] font-[700] relative top-1">
+                                prix : 25$
+                            </P>
+                    </div>
+                    <div class="flex gap-12 lg:gap-5 lg:text-[11px] text-[16px] font-[700] font-[Lemon]">
+                        <h2>POKEMON</h2>
+                        <h3 class="text-[#F1544D]">XX</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="text-white text-[30px] lg:text-[50px]">
+                <p>nom</p>
+                <p>Quality</p>
+                <p>prix</p>
+            </div>
+            <div class="bg-white h-14 w-25 flex gap-2 justify-center rounded-[5px] items-center">
+                <button class="bg-red-500 w-5 text-white">-</button>
+                <p class="  w-5 text-center border-2 rounded-[5px]">0</p>
+                <button class="bg-green-700 w-5 text-white">+</button>
+            </div>
+
+        </div> -->
+
+            </section>
+            <div class="flex flex-row gap-5">
+                <button
+                    class="w-18 h-10 lg:w-22 lg:h-13 rounded-[4px] text-[12px] lg:text-[15px] text-white bg-[#2F8E44]">acheter les cartes</button>
+                <button
+                  onclick="clear_panier()"  class="w-18 h-10 lg:w-22 lg:h-13 rounded-[4px] text-[12px] lg:text-[15px] text-white bg-red-500">clear le panier</button>
+            </div>
+        </section>
     </header>
 
     <main style="padding: 130px 0;"
@@ -44,7 +98,8 @@
 
         <section
             class=" rarter transition-all duration-800 fixed top-20 right-[100%] lg:right-18 lg:top-30 z-10 lg:block lg:flex justify-center items-center h- w-[50%] lg:w-[90%] lg:h-15 bg-linear-[#1D1C1C,#A67878] rounded-[10px]">
-            <ul  class="filtrage font-[Belgrano] flex flex-col lg:flex-row gap-5 lg:gap-12 justify-center items-center text-white text-[20px]">
+            <ul
+                class="filtrage font-[Belgrano] flex flex-col lg:flex-row gap-5 lg:gap-12 justify-center items-center text-white text-[20px]">
                 <!-- <li class=" bg-[#1DFBB8]  text-black w-35 flex justify-center rounded-tl-[10px] rounded-br-[10px]">
                     Communes</li>
                 <li class=" bg-[#EEB922]  text-black w-35 flex justify-center rounded-tl-[10px] rounded-br-[10px]">
@@ -57,7 +112,8 @@
                 </li> -->
             </ul>
         </section>
-        <section id="cartes_market" class="flex flex-col relative lg:top-30 lg:block lg:grid lg:grid-cols-3 gap-12 items-center">
+        <section id="cartes_market"
+            class="flex flex-col relative lg:top-30 lg:block lg:grid lg:grid-cols-3 gap-12 items-center">
 
             <!-- <div
                 class="carte_market w-65 h-108 lg:w-90 lg:h-150 rounded-[15px] flex flex-col justify-center items-center gap-5">

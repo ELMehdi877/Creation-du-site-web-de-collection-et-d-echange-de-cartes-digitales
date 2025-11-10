@@ -33,10 +33,65 @@
                 <li><a href="Favorite.html">Favorite</a></li>
             </ul>
 
-            <img src="image/shopp.png" alt="icon">
+            <img src="image/shopp.png" alt="icon" class="open_panier">
             <img src="/image/menu.png" alt="menu" class="open_menu relative lg:hidden">
 
         </nav>
+        <section id="acheter_panier" style="padding: 10px 0;"
+            class="fixed flex flex-col items-center gap-10 transition-all duration-800 z-12 top-20 right-[-200%] lg:right-[-100%] w-100 lg:w-210 bg-gray-400/50">
+            <section id="section_panier" class=" h-120 overflow-y-scroll  flex flex-col items-center gap-5">
+                <!-- <div style="padding: 10px 0;"
+            class="bg-linear-[45deg,#8D6464,#502F2F] lg:w-200 w-80 rounded-[15px] flex lg:flex-row lg:items-center flex-wrap justify-center lg:justify-around items-center gap-5">
+            <div
+                class=" bg-[url(image/carte-6.png)] bg-cover bg-center lg:w-[140px] w-[204px] lg:h-[197px] h-[287px] flex flex-col justify-end items-center">
+                <div
+                    class=" carte text-white relative flex flex-col justify-center items-center bottom-0.5  w-full h-[114px] lg:h-[78px] rounded-[10px]">
+                    <div class="flex justify-center items-center lg:gap-10 gap-12 relative  lg:right-2 ">
+                        <h2 class="anime rotate-[90deg] lg:text-[11px] text-[16px] absolute right-31.5 lg:right-19 ">
+                            ANIME</h3>
+                            <div class="flex flex-col font-[Poppins] w-[80px] lg:w-[55px] relative lg:left-9 left-6 ">
+                                <h5 class="lg:text-[7px] text-[10px] font-[700]">POKI</h5>
+                                <p class="lg:text-[5px]/1.5 text-[7px]/2  font-[400] ">Lorem ipsum dolor
+                                    sit
+                                    ame Lorem ipsum
+                                    dolor
+                                    sit
+                                    amet
+                                    consectetur adipisicing elit.</p>
+                            </div>
+                            <P class="lg:text-[5px] text-[7px] font-[700] relative top-1">
+                                prix : 25$
+                            </P>
+                    </div>
+                    <div class="flex gap-12 lg:gap-5 lg:text-[11px] text-[16px] font-[700] font-[Lemon]">
+                        <h2>POKEMON</h2>
+                        <h3 class="text-[#F1544D]">XX</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="text-white text-[30px] lg:text-[50px]">
+                <p>nom</p>
+                <p>Quality</p>
+                <p>prix</p>
+            </div>
+            <div class="bg-white h-14 w-25 flex gap-2 justify-center rounded-[5px] items-center">
+                <button class="bg-red-500 w-5 text-white">-</button>
+                <p class="  w-5 text-center border-2 rounded-[5px]">0</p>
+                <button class="bg-green-700 w-5 text-white">+</button>
+            </div>
+
+        </div> -->
+
+            </section>
+            <div class="flex flex-row gap-5">
+                <button
+                    class="w-18 h-10 lg:w-22 lg:h-13 rounded-[4px] text-[12px] lg:text-[15px] text-white bg-[#2F8E44]">acheter
+                    les cartes</button>
+                <button
+                    class="w-18 h-10 lg:w-22 lg:h-13 rounded-[4px] text-[12px] lg:text-[15px] text-white bg-red-500">clear
+                    le panier</button>
+            </div>
+        </section>
     </header>
 
     <main>

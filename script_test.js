@@ -71,9 +71,9 @@ if (buttons_filtrage) {
 
 // Initialize storage
 let tous_favoris = JSON.parse(localStorage.getItem('favoris')) || [];
-let panier = JSON.parse(localStorage.getItem('panier')) || [];
+let tous_panier = JSON.parse(localStorage.getItem('panier')) || [];
 
-// Add to favorites function
+//function Add to localstorage favorite 
 function ajoute_favoris(id) {
     const el_favoris = product.find(el => el.id === id);
     if (!el_favoris) return;
