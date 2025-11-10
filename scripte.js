@@ -158,9 +158,11 @@ if (buttons_filtrage) {
 
 
 
-// localStorage favoris
+// localStorage favoris and panier and My Deck
 let tous_favoris = JSON.parse(localStorage.getItem('favoris')) || []
 let tous_panier = JSON.parse(localStorage.getItem("panier")) || []
+let tous_My_Deck = JSON.parse(localStorage.getItem("My_Deck")) || []
+
 //fonction d'ajoute au favoris
 function ajoute_favoris(id) {
     const el_favoris = product.find(el => el.id === id);
@@ -452,3 +454,53 @@ function clear_panier(){
     alert("sumprime")
     affiche_panie()
 }
+
+// add to My Deck
+function ajoute_My_Deck(){
+    tous_My_Deck=JSON.parse(localStorage.getItem("panier"))
+    localStorage.setItem("My_Deck",JSON.stringify(tous_My_Deck))
+    alert("acheter")
+
+}
+
+//function affiche My Deck
+function affiche_My_Deck(){
+    const section_My_Deck =document.getElementById("section_My_Deck")
+    if(!section_My_Deck)
+        return
+    section_My_Deck.innerHTML=''
+    tous_My_Deck.forEach((el) => {
+
+        section_My_Deck.innerHTML+= `
+       
+            <div
+                class=" bg-[url(${el.image})] bg-cover bg-center lg:w-[140px] w-[204px] lg:h-[197px] h-[287px] flex flex-col justify-end items-center">
+                <div
+                    class=" carte text-white relative flex flex-col justify-center items-center bottom-0.5  w-full h-[114px] lg:h-[78px] rounded-[10px]">
+                    <div class="flex justify-center items-center lg:gap-10 gap-12 relative  lg:right-2 ">
+                        <h2 class="anime rotate-[90deg] lg:text-[11px] text-[16px] absolute right-31.5 lg:right-19 ">
+                            ANIME</h3>
+                            <div class="flex flex-col font-[Poppins] w-[80px] lg:w-[55px] relative lg:left-9 left-6 ">
+                                <h5 class="lg:text-[7px] text-[10px] font-[700]">${el.name}</h5>
+                                <p class="lg:text-[5px]/1.5 text-[7px]/2  font-[400] ">Lorem ipsum dolor
+                                    sit
+                                    ame Lorem ipsum
+                                    dolor
+                                    sit
+                                    amet
+                                    consectetur adipisicing elit.</p>
+                            </div>
+                            <P class="lg:text-[5px] text-[7px] font-[700] relative top-1">
+                                prix : ${el.price}$
+                            </P>
+                    </div>
+                    <div class="flex gap-12 lg:gap-5 lg:text-[11px] text-[16px] font-[700] font-[Lemon]">
+                        <h2>POKEMON</h2>
+                        <h3 class="text-${el.color}-500">XX</h3>
+                    </div>
+                </div>
+            </div>
+        `
+    } )
+}
+affiche_My_Deck()

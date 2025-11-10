@@ -86,18 +86,35 @@
             </section>
             <div class="flex flex-row gap-5">
                 <button
-                    class="w-18 h-10 lg:w-22 lg:h-13 rounded-[4px] text-[12px] lg:text-[15px] text-white bg-[#2F8E44]">acheter
-                    les cartes</button>
+                  onclick="ajoute_My_Deck()"  class="w-18 h-10 lg:w-22 lg:h-13 rounded-[4px] text-[12px] lg:text-[15px] text-white bg-[#2F8E44]">acheter les cartes</button>
                 <button
-                    class="w-18 h-10 lg:w-22 lg:h-13 rounded-[4px] text-[12px] lg:text-[15px] text-white bg-red-500">clear
-                    le panier</button>
+                  onclick="clear_panier()"  class="w-18 h-10 lg:w-22 lg:h-13 rounded-[4px] text-[12px] lg:text-[15px] text-white bg-red-500">clear le panier</button>
             </div>
         </section>
     </header>
 
-    <main class=" bg-[url(image/bg-8.png)] bg-cover bg-center">
+    <main style="padding: 200px 0;"
+        class=" bg-[url(image/bg-6.png)] bg-cover grid grid-cols-1 gap-8 bg-center lg:flex lg:flex-col items-center h-auto justify-center">
+        <section
+            class=" rarter transition-all duration-800 fixed top-20 right-[100%] lg:right-18 lg:top-30 z-10 lg:block lg:flex justify-center items-center h- w-[50%] lg:w-[90%] lg:h-15 bg-linear-[#1D1C1C,#A67878] rounded-[10px]">
+            <ul
+                class="filtrage font-[Belgrano] flex flex-col lg:flex-row gap-5 lg:gap-12 justify-center items-center text-white text-[20px]">
+                <!-- <li class=" bg-[#1DFBB8]  text-black w-35 flex justify-center rounded-tl-[10px] rounded-br-[10px]">
+                    Communes</li>
+                <li class=" bg-[#EEB922]  text-black w-35 flex justify-center rounded-tl-[10px] rounded-br-[10px]">
+                    Legendar</li>
+                <li class=" bg-[#FA5220]  text-black w-35 flex justify-center rounded-tl-[10px] rounded-br-[10px]">Rares
+                </li>
+                <li class=" bg-[#1CB8FB]  text-black w-35 flex justify-center rounded-tl-[10px] rounded-br-[10px]">
+                    Mythic</li>
+                <li class=" bg-[#BA41ED]  text-black w-35 flex justify-center rounded-tl-[10px] rounded-br-[10px]">Epic
+                </li> -->
+            </ul>
+        </section>
+        <section id="section_My_Deck"
+            class=" flex flex-col lg:top-30 lg:block lg:grid lg:grid-cols-5 gap-12 items-center">
 
-
+        </section>
 
     </main>
 
