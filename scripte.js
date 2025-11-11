@@ -27,84 +27,96 @@ const product = [
         name: 'poki',
         price: 20,
         image: 'image/carte-6.png',
-        color: 'orange'
+        color: 'orange',
+        Quantiter: 1
     },
     {
         id: 2,
         name: 'polo',
         price: 10,
         image: 'image/carte-1.png',
-        color: 'purple'
+        color: 'purple',
+        Quantiter: 1
     },
     {
         id: 3,
         name: 'kiki',
         price: 15,
         image: 'image/carte-5.png',
-        color: 'green'
+        color: 'green',
+        Quantiter: 1
     },
     {
         id: 4,
         name: 'lolo',
         price: 20,
         image: 'image/carte-2.png',
-        color: 'orange'
+        color: 'orange',
+        Quantiter: 1
     },
     {
         id: 5,
         name: 'ninii',
         price: 20,
         image: 'image/carte-3.png',
-        color: 'yellow'
+        color: 'yellow',
+        Quantiter: 1
     },
     {
         id: 6,
         name: 'nayno',
         price: 20,
         image: 'image/carte-4.png',
-        color: 'blue'
+        color: 'blue',
+        Quantiter: 1
     },
     {
         id: 7,
         name: 'lopi',
         price: 20,
         image: 'image/carte-10.png',
-        color: 'green'
+        color: 'green',
+        Quantiter: 1
     },
     {
         id: 8,
         name: 'mio',
         price: 20,
         image: 'image/carte-11.png',
-        color: 'orange'
+        color: 'orange',
+        Quantiter: 1
     },
     {
         id: 9,
         name: 'hola',
         price: 20,
         image: 'image/carte-12.png',
-        color: 'orange'
+        color: 'orange',
+        Quantiter: 1
     },
     {
         id: 10,
         name: 'gigo',
         price: 18,
         image: 'image/carte-9.png',
-        color: 'yellow'
+        color: 'yellow',
+        Quantiter: 1
     },
     {
         id: 11,
         name: 'poha',
         price: 50,
         image: 'image/carte-8.png',
-        color: 'blue'
+        color: 'blue',
+        Quantiter: 1
     },
     {
         id: 12,
         name: 'fiane',
         price: 2,
         image: 'image/carte-7.png',
-        color: 'orange'
+        color: 'orange',
+        Quantiter: 1
     },
 
 ];
@@ -181,9 +193,9 @@ function ajoute_favoris(id) {
 }
 
 //remove to favoris
-function supprimer_favoris(id){
-    tous_favoris=tous_favoris.filter(el => el.id!==id)
-    localStorage.setItem("favoris",JSON.stringify(tous_favoris))
+function supprimer_favoris(id) {
+    tous_favoris = tous_favoris.filter(el => el.id !== id)
+    localStorage.setItem("favoris", JSON.stringify(tous_favoris))
     affiche_favoris()
 }
 
@@ -371,12 +383,12 @@ function ajoute_panier(id) {
 }
 
 //function add to panier
-function ajoute_panier_favoris(id){
-    const el_panier_favoris=tous_favoris.find(el => el.id===id)
-    if(!el_panier_favoris)
+function ajoute_panier_favoris(id) {
+    const el_panier_favoris = tous_favoris.find(el => el.id === id)
+    if (!el_panier_favoris)
         return
-    const isExist_dans_panier=tous_panier.some(el => el.id === id)
-    if(!isExist_dans_panier){
+    const isExist_dans_panier = tous_panier.some(el => el.id === id)
+    if (!isExist_dans_panier) {
         tous_panier.push(el_panier_favoris)
         localStorage.setItem("panier", JSON.stringify(tous_panier))
         affiche_panie()
@@ -392,7 +404,7 @@ function affiche_panie() {
         section_panier.innerHTML += `
 
         <div style="padding: 10px 0;"
-            class="bg-linear-[45deg,#8D6464,#502F2F] lg:w-200 w-80 rounded-[15px] flex lg:flex-row lg:items-center flex-wrap justify-center lg:justify-around items-center gap-5">
+            class="bg-linear-[45deg,#8D6464,#502F2F] lg:w-200 w-70 rounded-[15px] flex lg:flex-row lg:items-center flex-wrap justify-center lg:justify-around items-center gap-5">
             <div
                 class=" bg-[url(${el.image})] bg-cover bg-center lg:w-[140px] w-[204px] lg:h-[197px] h-[287px] flex flex-col justify-end items-center">
                 <div
@@ -421,14 +433,14 @@ function affiche_panie() {
                 </div>
             </div>
             <div class="text-white text-[30px] lg:text-[50px]">
-                <p>nom</p>
-                <p>Quality</p>
-                <p>prix</p>
+                <p>${el.name}</p>
+                <h3 class="text-${el.color}-500 font-[700] font-[Lemon]">XX</h3>
+                <p>${el.price*el.Quantiter}$</p>
             </div>
             <div class="bg-white h-14 w-25 flex gap-2 justify-center rounded-[5px] items-center">
-                <button class="bg-red-500 w-5 text-white">-</button>
-                <p class="  w-5 text-center border-2 rounded-[5px]">0</p>
-                <button class="bg-green-700 w-5 text-white">+</button>
+                <button onclick="decrimenter(${el.id})" id="button_moin" class="bg-red-500 w-5 text-white">-</button>
+                <p id="quantiter" class="w-5 text-center border-2 rounded-[5px]">${el.Quantiter}</p>
+                <button onclick="incrimenter(${el.id})" id="button_plus" class="bg-green-700 w-5 text-white">+</button>
             </div>
 
         </div>
@@ -446,32 +458,57 @@ if (open_panier) {
     })
 }
 
+//function to increase the quantity
+const quantiter = document.getElementById("quantiter")
+
+function incrimenter(id) {
+    const el_incrimente = tous_panier.find(el => el.id === id)
+    if(!el_incrimente)
+        return
+    el_incrimente.Quantiter++
+    localStorage.setItem("panier", JSON.stringify(tous_panier))
+    affiche_panie()
+}
+
+//function to decrease the quantity
+function decrimenter(id) {
+    const el_decrimente = tous_panier.find(el => el.id === id)
+    if(!el_decrimente)
+        return
+    el_decrimente.Quantiter--
+    if(el_decrimente.Quantiter<1)
+        tous_panier = tous_panier.filter((el) => el.id !==id)
+    localStorage.setItem("panier", JSON.stringify(tous_panier))
+    affiche_panie()
+}
+
+
 //function to clear the panier
 
-function clear_panier(){
-    tous_panier=[]
-    localStorage.setItem("panier",JSON.stringify(tous_panier))
+function clear_panier() {
+    tous_panier = []
+    localStorage.setItem("panier", JSON.stringify(tous_panier))
     alert("sumprime")
     affiche_panie()
 }
 
 // add to My Deck
-function ajoute_My_Deck(){
-    tous_My_Deck=JSON.parse(localStorage.getItem("panier"))
-    localStorage.setItem("My_Deck",JSON.stringify(tous_My_Deck))
+function ajoute_My_Deck() {
+    tous_My_Deck = JSON.parse(localStorage.getItem("panier"))
+    localStorage.setItem("My_Deck", JSON.stringify(tous_My_Deck))
     alert("acheter")
 
 }
 
 //function affiche My Deck
-function affiche_My_Deck(){
-    const section_My_Deck =document.getElementById("section_My_Deck")
-    if(!section_My_Deck)
+function affiche_My_Deck() {
+    const section_My_Deck = document.getElementById("section_My_Deck")
+    if (!section_My_Deck)
         return
-    section_My_Deck.innerHTML=''
+    section_My_Deck.innerHTML = ''
     tous_My_Deck.forEach((el) => {
 
-        section_My_Deck.innerHTML+= `
+        section_My_Deck.innerHTML += `
        
             <div
                 class=" bg-[url(${el.image})] bg-cover bg-center lg:w-[140px] w-[204px] lg:h-[197px] h-[287px] flex flex-col justify-end items-center">
@@ -501,6 +538,6 @@ function affiche_My_Deck(){
                 </div>
             </div>
         `
-    } )
+    })
 }
 affiche_My_Deck()
