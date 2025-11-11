@@ -546,11 +546,11 @@ affiche_My_Deck()
 //affichage des cartes sur le play
 function afiche_carte_paly() {
     const Draw_card = document.getElementById("Draw_card")
-    if(!Draw_card)
+    if (!Draw_card)
         return
-        Draw_card.innerHTML=''
+    Draw_card.innerHTML = ''
     tous_My_Deck.forEach((el) => {
-        Draw_card.innerHTML+=`
+        Draw_card.innerHTML += `
         <div
                 class=" bg-[url(${el.image})] bg-cover bg-center lg:w-[140px] w-[42px] lg:h-[197px] h-[60px] flex-shrink-0 flex flex-col justify-end items-center">
                 <div
