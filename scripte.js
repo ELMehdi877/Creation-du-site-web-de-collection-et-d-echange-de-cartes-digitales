@@ -435,7 +435,7 @@ function affiche_panie() {
             <div class="text-white text-[30px] lg:text-[50px]">
                 <p>${el.name}</p>
                 <h3 class="text-${el.color}-500 font-[700] font-[Lemon]">XX</h3>
-                <p>${el.price*el.Quantiter}$</p>
+                <p>${el.price * el.Quantiter}$</p>
             </div>
             <div class="bg-white h-14 w-25 flex gap-2 justify-center rounded-[5px] items-center">
                 <button onclick="decrimenter(${el.id})" id="button_moin" class="bg-red-500 w-5 text-white">-</button>
@@ -463,7 +463,7 @@ const quantiter = document.getElementById("quantiter")
 
 function incrimenter(id) {
     const el_incrimente = tous_panier.find(el => el.id === id)
-    if(!el_incrimente)
+    if (!el_incrimente)
         return
     el_incrimente.Quantiter++
     localStorage.setItem("panier", JSON.stringify(tous_panier))
@@ -473,11 +473,11 @@ function incrimenter(id) {
 //function to decrease the quantity
 function decrimenter(id) {
     const el_decrimente = tous_panier.find(el => el.id === id)
-    if(!el_decrimente)
+    if (!el_decrimente)
         return
     el_decrimente.Quantiter--
-    if(el_decrimente.Quantiter<1)
-        tous_panier = tous_panier.filter((el) => el.id !==id)
+    if (el_decrimente.Quantiter < 1)
+        tous_panier = tous_panier.filter((el) => el.id !== id)
     localStorage.setItem("panier", JSON.stringify(tous_panier))
     affiche_panie()
 }
@@ -541,3 +541,44 @@ function affiche_My_Deck() {
     })
 }
 affiche_My_Deck()
+
+
+//affichage des cartes sur le play
+function afiche_carte_paly() {
+    const Draw_card = document.getElementById("Draw_card")
+    if(!Draw_card)
+        return
+        Draw_card.innerHTML=''
+    tous_My_Deck.forEach((el) => {
+        Draw_card.innerHTML+=`
+        <div
+                class=" bg-[url(${el.image})] bg-cover bg-center lg:w-[140px] w-[42px] lg:h-[197px] h-[60px] flex-shrink-0 flex flex-col justify-end items-center">
+                <div
+                    class=" carte text-white relative flex flex-col justify-center items-center bottom-[0.2px]  w-full h-[24px] lg:h-[78px] rounded-[3px] lg:rounded-[10px]">
+                    <div class="flex justify-center items-center lg:gap-10 gap-7 relative right-2 lg:right-2 ">
+                        <h2 class="anime rotate-[90deg] lg:text-[11px] text-[4px] absolute right-7.5 lg:right-19 ">
+                            ANIME</h3>
+                            <div class="flex flex-col font-[Poppins] w-[25px] lg:w-[55px] relative lg:left-9 left-6 ">
+                                <h5 class="lg:text-[7px] text-[3px] font-[700]">${el.name}</h5>
+                                <p class="lg:text-[5px]/1.5 text-[2px]/0.5  font-[400] ">Lorem ipsum dolor
+                                    sit
+                                    ame Lorem ipsum
+                                    dolor
+                                    sit
+                                    amet
+                                    consectetur adipisicing elit.</p>
+                            </div>
+                            <P class="lg:text-[5px] text-[2px] font-[700] relative top-1">
+                                prix : ${el.price}$
+                            </P>
+                    </div>
+                    <div class="flex gap-2 lg:gap-5 lg:text-[11px] text-[4px] font-[700] font-[Lemon]">
+                        <h2>POKEMON</h2>
+                        <h3 class="text-${el.color}-500">XX</h3>
+                    </div>
+                </div>
+            </div>
+        `
+    })
+}
+afiche_carte_paly()
