@@ -655,14 +655,14 @@ function arena_drag_drop() {
                 el.classList.remove("bg-red-500")
             })
             el.addEventListener("drop", () => {
-                // if (ar_drag.classList.contains("item_arena_drag")) {
-                //     el.append(ar_drag);
-                // }
                 if (ar_drag.classList.contains("item_arena_drag")) {
-                    if (condition) {
-                        el.append(ar_drag);
-                    }
+                    el.append(ar_drag);
                 }
+                // if (ar_drag.classList.contains("item_arena_drag")) {
+                //     if (condition) {
+                //         el.append(ar_drag);
+                //     }
+                // }
             })
         })
 
