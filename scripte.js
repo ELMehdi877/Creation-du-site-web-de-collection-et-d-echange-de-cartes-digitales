@@ -552,7 +552,7 @@ function afiche_carte_paly() {
     tous_My_Deck.forEach((el) => {
         Draw_card.innerHTML += `
         <div
-                class=" bg-[url(${el.image})] bg-cover bg-center lg:w-[140px] w-[42px] lg:h-[197px] h-[60px] flex-shrink-0 flex flex-col justify-end items-center">
+              draggable="true"  class="item_drag cursor-grab bg-[url(${el.image})] bg-cover bg-center lg:w-[140px] w-[42px] lg:h-[197px] h-[60px] flex-shrink-0 flex flex-col justify-end items-center">
                 <div
                     class=" carte text-white relative flex flex-col justify-center items-center bottom-[0.2px]  w-full h-[24px] lg:h-[78px] rounded-[3px] lg:rounded-[10px]">
                     <div class="flex justify-center items-center lg:gap-10 gap-7 relative right-2 lg:right-2 ">
@@ -580,5 +580,91 @@ function afiche_carte_paly() {
             </div>
         `
     })
+
+
 }
 afiche_carte_paly()
+
+
+//fonction drag and drop to hand
+let m_drag = null
+const main_drop = document.querySelectorAll(".main_drop")
+function hand_drag_drop() {
+    const item_drag = document.querySelectorAll('.item_drag')
+    if (!item_drag)
+        return
+    item_drag.forEach((item_drag) => {
+        item_drag.addEventListener('dragstart', () => {
+            m_drag = item_drag
+            item_drag.style.opacity = '0.5'
+        })
+        item_drag.addEventListener('dragend', () => {
+            m_drag = null
+            item_drag.style.opacity = '1'
+        })
+    })
+    main_drop.forEach(main_drop => {
+        main_drop.addEventListener('dragover', (e) => {
+            e.preventDefault()
+            main_drop.style.background = '#d090b1ff'
+            main_drop.style.border = "dashed 4px red"
+
+        })
+        main_drop.addEventListener('dragleave', () => {
+            main_drop.style.background = '#e57373ff'
+            main_drop.style.border = "dashed 2px white"
+
+        })
+        main_drop.addEventListener("drop", () => {
+            main_drop.append(m_drag)
+            m_drag.classList.remove("item_drag")
+            m_drag.classList.add("item_arena_drag")
+            m_drag = null
+            arena_drag_drop()
+
+        })
+    })
+    // let item_arena_drag = document.querySelectorAll('.item_arena_drag')
+    // console.log(item_arena_drag);
+
+}
+hand_drag_drop()
+
+//fonction drag and drop to Arena
+let ar_drag = null
+let arena_drop = document.querySelectorAll(".arena_drop")
+function arena_drag_drop() {
+    let item_arena_drag = document.querySelectorAll('.item_arena_drag')
+    if (!item_arena_drag)
+        return
+    item_arena_drag.forEach(el => {
+        el.addEventListener('dragstart', () => {
+            ar_drag = el
+        })
+        el.addEventListener('dragend', () => {
+            ar_drag = null
+        })
+    })
+    arena_drop.forEach(el => {
+        el.addEventListener("dragover", (e) => {
+                if (ar_drag.classList.contains("item_arena_drag")) 
+                e.preventDefault()
+                el.classList.add("bg-red-500")
+            })
+            el.addEventListener("dragleave", () => {
+                el.classList.remove("bg-red-500")
+            })
+            el.addEventListener("drop", () => {
+                // if (ar_drag.classList.contains("item_arena_drag")) {
+                //     el.append(ar_drag);
+                // }
+                if (ar_drag.classList.contains("item_arena_drag")) {
+                    if (condition) {
+                        el.append(ar_drag);
+                    }
+                }
+            })
+        })
+
+}
+arena_drag_drop()
