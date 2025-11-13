@@ -695,136 +695,100 @@ arena_drag_drop()
 // console.log(document.querySelectorAll(".carte_market"))
 
 // let index_carte = Math.floor(Math.random() * product.length + 1)
+let i = 0
 function affiche_adversaire() {
-    let i=0
     const block_adversaire = document.querySelectorAll(".block_adversaire")
     if (!block_adversaire)
         return
-    document.getElementById('end_turn').addEventListener('click', ()=>{
-        let index_carte = Math.floor(Math.random() * product.length )
-        console.log(index_carte);
-        
-        let el = product[index_carte]
-             block_adversaire[i].innerHTML =`
-        <div
-        class="item_drag duration-800 cursor-grab bg-[url(${el.image})] bg-cover bg-center lg:w-[140px] w-[42px] lg:h-[197px] h-[60px] flex-shrink-0 flex flex-col justify-end items-center">
-                <div
-                    class=" carte text-white relative flex flex-col justify-center items-center bottom-[0.2px]  w-full h-[24px] lg:h-[78px] rounded-[3px] lg:rounded-[10px]">
-                    <div class="flex justify-center items-center lg:gap-10 gap-7 relative right-2 lg:right-2 ">
-                        <h2 class="anime rotate-[90deg] lg:text-[11px] text-[4px] absolute right-7.5 lg:right-19 ">
-                            ANIME</h3>
-                            <div class="flex flex-col font-[Poppins] w-[25px] lg:w-[55px] relative lg:left-9 left-6 ">
-                                <h5 class="lg:text-[7px] text-[3px] font-[700]">${el.name}</h5>
-                                <p class="lg:text-[5px]/1.5 text-[2px]/0.5  font-[400] ">Lorem ipsum dolor
-                                    sit
-                                    ame Lorem ipsum
-                                    dolor
-                                    sit
-                                    amet
-                                    consectetur adipisicing elit.</p>
-                            </div>
-                            <P class="lg:text-[5px] text-[2px] font-[700] relative top-1">
-                                prix : ${el.price}$
-                            </P>
-                    </div>
-                    <div class="flex gap-2 lg:gap-5 lg:text-[11px] text-[4px] font-[700] font-[Lemon]">
-                        <h2>POKEMON</h2>
-                        <h3 class="text-${el.color}-500">XX</h3>
+    const end_turn = document.getElementById('end_turn')
+    if (!end_turn)
+        return
+    end_turn.addEventListener('click', () => {
+        let index_carte = Math.floor(Math.random() * product.length)
+        // console.log(index_carte);
+        for (let j = 0; j < block_adversaire.length; j++) {
+            i = Math.floor(Math.random() * block_adversaire.length)
+            // console.log(i);
+
+            // console.log(block_adversaire[i]);
+
+            if (block_adversaire[i].children.length === 0) {
+                let el = product[index_carte]
+                let auto_mode = Math.ceil(Math.random() * 2)
+                console.log(auto_mode);
+                if (auto_mode === 1) {
+
+                    block_adversaire[i].innerHTML = `
+            <div
+           style="height:70%;" class="item_drag duration-800 rotate-90  cursor-grab bg-[url(${el.image})] bg-cover bg-center lg:w-[140px] w-[42px] lg:h-[197px] h-[60px] flex-shrink-0 flex flex-col justify-end items-center">
+                    <div
+                        class=" carte text-white relative flex flex-col justify-center items-center bottom-[0.2px]  w-full h-[24px] lg:h-[78px] rounded-[3px] lg:rounded-[10px]">
+                        <div class="flex justify-center items-center lg:gap-10 gap-7 relative right-2 lg:right-2 ">
+                            <h2 class="anime rotate-[90deg] lg:text-[11px] text-[4px] absolute right-7.5 lg:right-19 ">
+                                ANIME</h3>
+                                <div class="flex flex-col font-[Poppins] w-[25px] lg:w-[55px] relative lg:left-9 left-6 ">
+                                    <h5 class="lg:text-[7px] text-[3px] font-[700]">${el.name}</h5>
+                                    <p class="lg:text-[5px]/1.5 text-[2px]/0.5  font-[400] ">Lorem ipsum dolor
+                                        sit
+                                        ame Lorem ipsum
+                                        dolor
+                                        sit
+                                        amet
+                                        consectetur adipisicing elit.</p>
+                                </div>
+                                <P class="lg:text-[5px] text-[2px] font-[700] relative top-1">
+                                    prix : ${el.price}$
+                                </P>
+                        </div>
+                        <div class="flex gap-2 lg:gap-5 lg:text-[11px] text-[4px] font-[700] font-[Lemon]">
+                            <h2>POKEMON</h2>
+                            <h3 class="text-${el.color}-500">XX</h3>
+                        </div>
                     </div>
                 </div>
-            </div>
-        `
-        i++
-        })
-       
-        // console.log(block_adversaire[1]);
+            `}
+                else if (auto_mode === 2) {
 
-        // block_adversaire[0]=el; 
-    
-    // block_adversaire.forEach(block => {
-    //     // index_carte = Math.floor(Math.random() * product.length + 1)
-    // //    if () {
-        
-    // //    }
-    //     // product.forEach(el => {
-    //     //     // console.log(index_carte);
-    //     //     block.innerHTML = product[i].innerHTML = `
-    //     // // <div
-    //     // //   class="item_drag duration-800 cursor-grab bg-[url(${el.image})] bg-cover bg-center lg:w-[140px] w-[42px] lg:h-[197px] h-[60px] flex-shrink-0 flex flex-col justify-end items-center">
-    //     // //         <div
-    //     // //             class=" carte text-white relative flex flex-col justify-center items-center bottom-[0.2px]  w-full h-[24px] lg:h-[78px] rounded-[3px] lg:rounded-[10px]">
-    //     // //             <div class="flex justify-center items-center lg:gap-10 gap-7 relative right-2 lg:right-2 ">
-    //     // //                 <h2 class="anime rotate-[90deg] lg:text-[11px] text-[4px] absolute right-7.5 lg:right-19 ">
-    //     // //                     ANIME</h3>
-    //     // //                     <div class="flex flex-col font-[Poppins] w-[25px] lg:w-[55px] relative lg:left-9 left-6 ">
-    //     // //                         <h5 class="lg:text-[7px] text-[3px] font-[700]">${el.name}</h5>
-    //     // //                         <p class="lg:text-[5px]/1.5 text-[2px]/0.5  font-[400] ">Lorem ipsum dolor
-    //     // //                             sit
-    //     // //                             ame Lorem ipsum
-    //     // //                             dolor
-    //     // //                             sit
-    //     // //                             amet
-    //     // //                             consectetur adipisicing elit.</p>
-    //     // //                     </div>
-    //     // //                     <P class="lg:text-[5px] text-[2px] font-[700] relative top-1">
-    //     // //                         prix : ${el.price}$
-    //     // //                     </P>
-    //     // //             </div>
-    //     // //             <div class="flex gap-2 lg:gap-5 lg:text-[11px] text-[4px] font-[700] font-[Lemon]">
-    //     // //                 <h2>POKEMON</h2>
-    //     // //                 <h3 class="text-${el.color}-500">XX</h3>
-    //     // //             </div>
-    //     // //         </div>
-    //     // //     </div>
-    //     //  `
-        
-    //     // })
+                    block_adversaire[i].innerHTML = `
+            <div
+            class="item_drag duration-800 cursor-grab bg-[url(${el.image})] bg-cover bg-center lg:w-[140px] w-[42px] lg:h-[197px] h-[60px] flex-shrink-0 flex flex-col justify-end items-center">
+                    <div
+                        class=" carte text-white relative flex flex-col justify-center items-center bottom-[0.2px]  w-full h-[24px] lg:h-[78px] rounded-[3px] lg:rounded-[10px]">
+                        <div class="flex justify-center items-center lg:gap-10 gap-7 relative right-2 lg:right-2 ">
+                            <h2 class="anime rotate-[90deg] lg:text-[11px] text-[4px] absolute right-7.5 lg:right-19 ">
+                                ANIME</h3>
+                                <div class="flex flex-col font-[Poppins] w-[25px] lg:w-[55px] relative lg:left-9 left-6 ">
+                                    <h5 class="lg:text-[7px] text-[3px] font-[700]">${el.name}</h5>
+                                    <p class="lg:text-[5px]/1.5 text-[2px]/0.5  font-[400] ">Lorem ipsum dolor
+                                        sit
+                                        ame Lorem ipsum
+                                        dolor
+                                        sit
+                                        amet
+                                        consectetur adipisicing elit.</p>
+                                </div>
+                                <P class="lg:text-[5px] text-[2px] font-[700] relative top-1">
+                                    prix : ${el.price}$
+                                </P>
+                        </div>
+                        <div class="flex gap-2 lg:gap-5 lg:text-[11px] text-[4px] font-[700] font-[Lemon]">
+                            <h2>POKEMON</h2>
+                            <h3 class="text-${el.color}-500">XX</h3>
+                        </div>
+                    </div>
+                </div>
+            `}
+                return
+            }
+        }
+
+    })
 
 
-    //     // el.innerHTML = `
-    //     // <div
-    //     //   class="item_drag duration-800 cursor-grab bg-[url(${el.image})] bg-cover bg-center lg:w-[140px] w-[42px] lg:h-[197px] h-[60px] flex-shrink-0 flex flex-col justify-end items-center">
-    //     //         <div
-    //     //             class=" carte text-white relative flex flex-col justify-center items-center bottom-[0.2px]  w-full h-[24px] lg:h-[78px] rounded-[3px] lg:rounded-[10px]">
-    //     //             <div class="flex justify-center items-center lg:gap-10 gap-7 relative right-2 lg:right-2 ">
-    //     //                 <h2 class="anime rotate-[90deg] lg:text-[11px] text-[4px] absolute right-7.5 lg:right-19 ">
-    //     //                     ANIME</h3>
-    //     //                     <div class="flex flex-col font-[Poppins] w-[25px] lg:w-[55px] relative lg:left-9 left-6 ">
-    //     //                         <h5 class="lg:text-[7px] text-[3px] font-[700]">${el.name}</h5>
-    //     //                         <p class="lg:text-[5px]/1.5 text-[2px]/0.5  font-[400] ">Lorem ipsum dolor
-    //     //                             sit
-    //     //                             ame Lorem ipsum
-    //     //                             dolor
-    //     //                             sit
-    //     //                             amet
-    //     //                             consectetur adipisicing elit.</p>
-    //     //                     </div>
-    //     //                     <P class="lg:text-[5px] text-[2px] font-[700] relative top-1">
-    //     //                         prix : ${el.price}$
-    //     //                     </P>
-    //     //             </div>
-    //     //             <div class="flex gap-2 lg:gap-5 lg:text-[11px] text-[4px] font-[700] font-[Lemon]">
-    //     //                 <h2>POKEMON</h2>
-    //     //                 <h3 class="text-${el.color}-500">XX</h3>
-    //     //             </div>
-    //     //         </div>
-    //     //     </div>
-    //     // `
-    //     console.log(block);
-    //     // product.forEach(pr => {
-    //     //     el
-    //     // })
-    // })
 }
 affiche_adversaire()
 
-
-
-
-const users = [{name:'Sara',age:17},{name:'Ali',age:22},{name:'Redone',age:16}];
-
-users.filter(el => el.age<18)
-cosole.log(users)
+// fonction logique de jeux
 
 
 
