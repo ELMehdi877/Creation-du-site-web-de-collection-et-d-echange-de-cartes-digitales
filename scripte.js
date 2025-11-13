@@ -641,6 +641,9 @@ function arena_drag_drop() {
         return
     item_arena_drag.forEach(el => {
         el.addEventListener('dragstart', () => {
+            el.removeAttribute("draggable");
+            // console.log(el);
+
             ar_drag = el
         })
         el.addEventListener('dragend', () => {
