@@ -616,12 +616,14 @@ function hand_drag_drop() {
 
         })
         main_drop.addEventListener("drop", () => {
-            main_drop.append(m_drag)
-            m_drag.classList.remove("item_drag")
-            m_drag.classList.add("item_arena_drag")
-            m_drag = null
-            arena_drag_drop()
+            if (main_drop.children.length === 0) {
+                main_drop.append(m_drag)
+                m_drag.classList.remove("item_drag")
+                m_drag.classList.add("item_arena_drag")
+                m_drag = null
+                arena_drag_drop()
 
+            }
         })
     })
     // let item_arena_drag = document.querySelectorAll('.item_arena_drag')
@@ -642,29 +644,74 @@ function arena_drag_drop() {
             ar_drag = el
         })
         el.addEventListener('dragend', () => {
-            ar_drag = null
+            // ar_drag = null
         })
     })
     arena_drop.forEach(el => {
         el.addEventListener("dragover", (e) => {
-                if (ar_drag.classList.contains("item_arena_drag")) 
+            if (ar_drag.classList.contains("item_arena_drag"))
                 e.preventDefault()
-                el.classList.add("bg-red-500")
-            })
-            el.addEventListener("dragleave", () => {
+            el.classList.add("bg-red-500")
+        })
+        el.addEventListener("dragleave", () => {
+            if (ar_drag.classList.contains("item_arena_drag"))
                 el.classList.remove("bg-red-500")
-            })
-            el.addEventListener("drop", () => {
-                if (ar_drag.classList.contains("item_arena_drag")) {
-                    el.append(ar_drag);
-                }
-                // if (ar_drag.classList.contains("item_arena_drag")) {
-                //     if (condition) {
-                //         el.append(ar_drag);
-                //     }
-                // }
-            })
+        })
+        el.addEventListener("drop", () => {
+            // if (ar_drag.classList.contains("item_arena_drag")) {
+            //     el.append(ar_drag);
+            // }
+            if (ar_drag.classList.contains("item_arena_drag") && el.children.length === 0) {
+                el.append(ar_drag);
+                const attaque_defence = document.querySelector(".attaque_defence")
+                if (!attaque_defence)
+                    return;
+                attaque_defence.style.display = 'block';
+                attaque_defence.innerHTML = ''
+                attaque_defence.innerHTML = `
+                <div class=" flex gap-5 p-2  justify-center items-center">
+                <button class="defence text-white bg-green-700 rounded-[5px] p-1 text-center">defence</button>
+                <button class="attaque text-white bg-red-700 rounded-[5px] p-1 text-center">attaque</button>
+            </div>
+            `
+                // attaque_defence.innerHTML = ''
+                document.querySelector(".defence").addEventListener('click', () => {
+                    ar_drag.style.height = "70%"
+                    ar_drag.classList.add("rotate-90")
+                    document.querySelector(".attaque_defence").style.display = "none"
+                    ar_drag = null
+                })
+                document.querySelector(".attaque").addEventListener('click', () => {
+                    ar_drag.classList.add("animate-pulse")
+                    document.querySelector(".attaque_defence").style.display = "none"
+                    ar_drag = null
+                })
+            }
         })
 
+    })
+    // ar_drag = null
+
 }
+//function to defence
+// function defence(el) {
+//     // el.style.width="50%"
+//     el.style.height = "70%"
+//     el.classList.add("rotate-90")
+//     document.querySelector(".attaque_defence").style.display = "none"
+//     // el = null
+//     console.log(el);
+
+// }
+
+// //function to attaque
+// function attaque(el) {
+//     // el.style.width="50%"
+//     el.classList.add("animate-pulse")
+//     document.querySelector(".attaque_defence").style.display = "none"
+//     // el = null
+//     console.log(el);
+
+// }
+
 arena_drag_drop()
