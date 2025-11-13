@@ -552,7 +552,7 @@ function afiche_carte_paly() {
     tous_My_Deck.forEach((el) => {
         Draw_card.innerHTML += `
         <div
-              draggable="true"  class="item_drag duration-800 cursor-grab bg-[url(${el.image})] bg-cover bg-center lg:w-[140px] w-[42px] lg:h-[197px] h-[60px] flex-shrink-0 flex flex-col justify-end items-center">
+              draggable="true"  class="item_drag  duration-800 cursor-grab bg-[url(${el.image})] bg-cover bg-center lg:w-[140px] w-[42px] lg:h-[197px] h-[60px] flex-shrink-0 flex flex-col justify-end items-center">
                 <div
                     class=" carte text-white relative flex flex-col justify-center items-center bottom-[0.2px]  w-full h-[24px] lg:h-[78px] rounded-[3px] lg:rounded-[10px]">
                     <div class="flex justify-center items-center lg:gap-10 gap-7 relative right-2 lg:right-2 ">
@@ -696,14 +696,16 @@ arena_drag_drop()
 
 // let index_carte = Math.floor(Math.random() * product.length + 1)
 function affiche_adversaire() {
+    let i=0
     const block_adversaire = document.querySelectorAll(".block_adversaire")
     if (!block_adversaire)
         return
-    for (let i = 0; i <= block_adversaire.length; i++) {
-        let index_carte = Math.floor(Math.random() * product.length + 1)
-        let el = product[index_carte]
+    document.getElementById('end_turn').addEventListener('click', ()=>{
+        let index_carte = Math.floor(Math.random() * product.length )
+        console.log(index_carte);
         
-        el.innerHTML =`
+        let el = product[index_carte]
+             block_adversaire[i].innerHTML =`
         <div
         class="item_drag duration-800 cursor-grab bg-[url(${el.image})] bg-cover bg-center lg:w-[140px] w-[42px] lg:h-[197px] h-[60px] flex-shrink-0 flex flex-col justify-end items-center">
                 <div
@@ -732,10 +734,13 @@ function affiche_adversaire() {
                 </div>
             </div>
         `
-        console.log(el);
+        i++
+        })
+       
+        // console.log(block_adversaire[1]);
 
-        block_adversaire[i]=el; 
-    }
+        // block_adversaire[0]=el; 
+    
     // block_adversaire.forEach(block => {
     //     // index_carte = Math.floor(Math.random() * product.length + 1)
     // //    if () {
@@ -813,40 +818,13 @@ function affiche_adversaire() {
 }
 affiche_adversaire()
 
-// function draw_adversaire_card() {
-//     const block_adversaire = document.querySelectorAll(".block_adversaire");
-//     if (!block_adversaire && block_adversaire.length === 0) return;
 
-//     // البحث عن أول مكان فارغ
-//     for (let block of block_adversaire) {
-//         if (block.children.length ===0) {
-//             const randomIndex = Math.floor(Math.random() * product.length);
-//             const randomCard = product[randomIndex];
-            
-//             block.innerHTML = `
-//                 <div class="adversaire_card duration-800 bg-[url(${randomCard.image})] bg-cover bg-center lg:w-[140px] w-[42px] lg:h-[197px] h-[60px] flex-shrink-0 flex flex-col justify-end items-center">
-//                     <div class="carte text-white relative flex flex-col justify-center items-center bottom-[0.2px] w-full h-[24px] lg:h-[78px] rounded-[3px] lg:rounded-[10px]">
-//                         <div class="flex justify-center items-center lg:gap-10 gap-7 relative right-2 lg:right-2">
-//                             <h2 class="anime rotate-[90deg] lg:text-[11px] text-[4px] absolute right-7.5 lg:right-19">ANIME</h2>
-//                             <div class="flex flex-col font-[Poppins] w-[25px] lg:w-[55px] relative lg:left-9 left-6">
-//                                 <h5 class="lg:text-[7px] text-[3px] font-[700]">${randomCard.name}</h5>
-//                                 <p class="lg:text-[5px]/1.5 text-[2px]/0.5 font-[400]">Lorem ipsum dolor sit ame Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-//                             </div>
-//                             <p class="lg:text-[5px] text-[2px] font-[700] relative top-1">prix : ${randomCard.price}$</p>
-//                         </div>
-//                         <div class="flex gap-2 lg:gap-5 lg:text-[11px] text-[4px] font-[700] font-[Lemon]">
-//                             <h2>POKEMON</h2>
-//                             <h3 class="text-${randomCard.color}-500">XX</h3>
-//                         </div>
-//                     </div>
-//                 </div>
-//             `;
-//             // break; // توقف بعد إضافة بطاقة واحدة
-//         }
-//     }
-// }
 
-// draw_adversaire_card()
+
+const users = [{name:'Sara',age:17},{name:'Ali',age:22},{name:'Redone',age:16}];
+
+users.filter(el => el.age<18)
+cosole.log(users)
 
 
 
