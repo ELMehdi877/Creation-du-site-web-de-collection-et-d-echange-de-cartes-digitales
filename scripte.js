@@ -669,52 +669,25 @@ function arena_drag_drop() {
                 const attaque_defence = document.querySelector(".attaque_defence")
                 if (!attaque_defence)
                     return;
-                attaque_defence.style.display = 'block';
-                attaque_defence.innerHTML = ''
-                attaque_defence.innerHTML = `
-                <div class=" flex gap-5 p-2  justify-center items-center">
-                <button class="defence text-white bg-green-700 rounded-[5px] p-1 text-center">defence</button>
-                <button class="attaque text-white bg-red-700 rounded-[5px] p-1 text-center">attaque</button>
-            </div>
-            `
-                // attaque_defence.innerHTML = ''
+                attaque_defence.classList.remove("hidden")
                 document.querySelector(".defence").addEventListener('click', () => {
                     ar_drag.style.height = "70%"
                     ar_drag.classList.add("rotate-90")
-                    document.querySelector(".attaque_defence").style.display = "none"
                     ar_drag = null
+                    attaque_defence.classList.add("hidden")
                 })
                 document.querySelector(".attaque").addEventListener('click', () => {
                     ar_drag.classList.add("animate-pulse")
-                    document.querySelector(".attaque_defence").style.display = "none"
                     ar_drag = null
+                    attaque_defence.classList.add("hidden")
+
                 })
             }
         })
 
     })
-    // ar_drag = null
 
 }
-//function to defence
-// function defence(el) {
-//     // el.style.width="50%"
-//     el.style.height = "70%"
-//     el.classList.add("rotate-90")
-//     document.querySelector(".attaque_defence").style.display = "none"
-//     // el = null
-//     console.log(el);
 
-// }
-
-// //function to attaque
-// function attaque(el) {
-//     // el.style.width="50%"
-//     el.classList.add("animate-pulse")
-//     document.querySelector(".attaque_defence").style.display = "none"
-//     // el = null
-//     console.log(el);
-
-// }
 
 arena_drag_drop()
