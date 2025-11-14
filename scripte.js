@@ -552,7 +552,7 @@ function afiche_carte_paly() {
     tous_My_Deck.forEach((el) => {
         Draw_card.innerHTML += `
         <div
-              draggable="true"  class="item_drag  duration-800 cursor-grab bg-[url(${el.image})] bg-cover bg-center lg:w-[140px] w-[42px] lg:h-[197px] h-[60px] flex-shrink-0 flex flex-col justify-end items-center">
+              draggable="true"  class="item_drag  duration-200 cursor-grab bg-[url(${el.image})] bg-cover bg-center lg:w-[140px] w-[42px] lg:h-[197px] h-[60px] flex-shrink-0 flex flex-col justify-end items-center">
                 <div
                     class=" carte text-white relative flex flex-col justify-center items-center bottom-[0.2px]  w-full h-[24px] lg:h-[78px] rounded-[3px] lg:rounded-[10px]">
                     <div class="flex justify-center items-center lg:gap-10 gap-7 relative right-2 lg:right-2 ">
@@ -682,6 +682,8 @@ function arena_drag_drop() {
 
                 })
             }
+            // el.removeAttribute("draggable");
+
         })
         // logique_play()
 
@@ -718,7 +720,7 @@ function affiche_adversaire() {
 
                     block_adversaire[i].innerHTML = `
                 <div
-                class="item_drag  cursor-grab bg-[url(${el.image})] bg-cover bg-center lg:w-[140px] w-[42px] lg:h-[197px] h-[60px] flex-shrink-0 flex flex-col justify-end items-center">
+                class="  cursor-grab bg-[url(${el.image})] bg-cover bg-center lg:w-[140px] w-[42px] lg:h-[197px] h-[60px] flex-shrink-0 flex flex-col justify-end items-center">
                         <div
                             class=" carte text-white relative flex flex-col justify-center items-center bottom-[0.2px]  w-full h-[24px] lg:h-[78px] rounded-[3px] lg:rounded-[10px]">
                             <div class="flex justify-center items-center lg:gap-10 gap-7 relative right-2 lg:right-2 ">
@@ -749,13 +751,13 @@ function affiche_adversaire() {
                         // block_adversaire[i].children[0].style.height="70%;"
                         block_adversaire[i].children[0].classList.remove("lg:h-[197px]", "h-[42px]")
                         block_adversaire[i].children[0].classList.add("duration-200", "h-[70%]", "rotate-90")
-                    }, 200)
+                    },100)
                 }
                 else if (auto_mode === 2) {
 
                     block_adversaire[i].innerHTML = `
                 <div
-                class="item_drag arena_attaque duration-800 cursor-grab bg-[url(${el.image})] bg-cover bg-center lg:w-[140px] w-[42px] lg:h-[197px] h-[60px] flex-shrink-0 flex flex-col justify-end items-center">
+                class="item_drag arena_attaque cursor-grab bg-[url(${el.image})] bg-cover bg-center lg:w-[140px] w-[42px] lg:h-[197px] h-[60px] flex-shrink-0 flex flex-col justify-end items-center">
                         <div
                             class=" carte text-white relative flex flex-col justify-center items-center bottom-[0.2px]  w-full h-[24px] lg:h-[78px] rounded-[3px] lg:rounded-[10px]">
                             <div class="flex justify-center items-center lg:gap-10 gap-7 relative right-2 lg:right-2 ">
