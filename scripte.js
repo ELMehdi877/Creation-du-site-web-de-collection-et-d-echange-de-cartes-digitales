@@ -552,7 +552,7 @@ function afiche_carte_paly() {
     tous_My_Deck.forEach((el) => {
         Draw_card.innerHTML += `
         <div
-              draggable="true"  class="item_drag  duration-200 cursor-grab bg-[url(${el.image})] bg-cover bg-center lg:w-[140px] w-[42px] lg:h-[197px] h-[60px] flex-shrink-0 flex flex-col justify-end items-center">
+              draggable="true"  class="${el.color} item_drag  duration-200 cursor-grab bg-[url(${el.image})] bg-cover bg-center lg:w-[140px] w-[42px] lg:h-[197px] h-[60px] flex-shrink-0 flex flex-col justify-end items-center">
                 <div
                     class=" carte text-white relative flex flex-col justify-center items-center bottom-[0.2px]  w-full h-[24px] lg:h-[78px] rounded-[3px] lg:rounded-[10px]">
                     <div class="flex justify-center items-center lg:gap-10 gap-7 relative right-2 lg:right-2 ">
@@ -704,9 +704,8 @@ function affiche_adversaire() {
         return
 
     end_turn.addEventListener('click', () => {
-
         let index_carte = Math.floor(Math.random() * product.length)
-        for (let j = 0; j < block_adversaire.length; j++) {
+        for (let j = 0; j < 1000; j++) {
             i = Math.floor(Math.random() * block_adversaire.length)
             // console.log(i);
 
@@ -720,7 +719,7 @@ function affiche_adversaire() {
 
                     block_adversaire[i].innerHTML = `
                 <div
-                class="  cursor-grab bg-[url(${el.image})] bg-cover bg-center lg:w-[140px] w-[42px] lg:h-[197px] h-[60px] flex-shrink-0 flex flex-col justify-end items-center">
+                class="${el.color}  cursor-grab bg-[url(${el.image})] bg-cover bg-center lg:w-[140px] w-[42px] lg:h-[197px] h-[60px] flex-shrink-0 flex flex-col justify-end items-center">
                         <div
                             class=" carte text-white relative flex flex-col justify-center items-center bottom-[0.2px]  w-full h-[24px] lg:h-[78px] rounded-[3px] lg:rounded-[10px]">
                             <div class="flex justify-center items-center lg:gap-10 gap-7 relative right-2 lg:right-2 ">
@@ -751,13 +750,13 @@ function affiche_adversaire() {
                         // block_adversaire[i].children[0].style.height="70%;"
                         block_adversaire[i].children[0].classList.remove("lg:h-[197px]", "h-[42px]")
                         block_adversaire[i].children[0].classList.add("duration-200", "h-[70%]", "rotate-90")
-                    },100)
+                    }, 100)
                 }
                 else if (auto_mode === 2) {
 
                     block_adversaire[i].innerHTML = `
                 <div
-                class="item_drag arena_attaque cursor-grab bg-[url(${el.image})] bg-cover bg-center lg:w-[140px] w-[42px] lg:h-[197px] h-[60px] flex-shrink-0 flex flex-col justify-end items-center">
+                class="${el.color} item_drag arena_attaque cursor-grab bg-[url(${el.image})] bg-cover bg-center lg:w-[140px] w-[42px] lg:h-[197px] h-[60px] flex-shrink-0 flex flex-col justify-end items-center">
                         <div
                             class=" carte text-white relative flex flex-col justify-center items-center bottom-[0.2px]  w-full h-[24px] lg:h-[78px] rounded-[3px] lg:rounded-[10px]">
                             <div class="flex justify-center items-center lg:gap-10 gap-7 relative right-2 lg:right-2 ">
@@ -783,15 +782,16 @@ function affiche_adversaire() {
                             </div>
                         </div>
                     </div>
-                `}
+                `      
+                attaque_pour_adversaire()
+                console.log("true");
+            }
                 return
             }
         }
 
-
-        // console.log(index_carte);
-
     })
+
 
 
 }
@@ -805,26 +805,35 @@ function logique_play() {
     btn_attaque.addEventListener('click', () => {
         let case1 = document.querySelectorAll(".case1 .arena_attaque")
         let case2 = document.querySelectorAll(".case2 .arena_attaque")
-        if (case2.length > 0) {
-            if (case1.length > 0) {
-                let index_attaque = Math.floor(Math.random() * case1.length)
-                console.log(index_attaque);
-                case1[index_attaque].remove()
-                case1 = document.querySelectorAll(".case1 .arena_attaque")
-                console.log(case1)
-                console.log(case2.length)
+        if (case2.length > 0 && case1.length > 0) {
+            // if (case1[index_attaque].classList()) {
+            let index_attaque = Math.floor(Math.random() * case1.length)
+            console.log(index_attaque);
+            case1[index_attaque].remove()
+            case1 = document.querySelectorAll(".case1 .arena_attaque")
+            console.log(case1)
+            console.log(case2.length)
 
-                // console.log(test)
-
-            }
         }
-        //     case1.forEach(el => {
-        //         if (el.children[0].classList.contains("arena_attaque")) {
-        //             console.log("true");
-        //         }
-        //     })
+
     })
 }
 logique_play()
 
+//fonction d'attaque pour adversaire
+
+function attaque_pour_adversaire() {
+    let case1 = document.querySelectorAll(".case1 .arena_attaque")
+    let case2 = document.querySelectorAll(".case2 .arena_attaque")
+    if (case2.length > 0 && case1.length > 0) {
+        let index_attaque = Math.floor(Math.random() * case2.length)
+        console.log(index_attaque);
+        case2[index_attaque].remove()
+        case2 = document.querySelectorAll(".case2 .arena_attaque")
+        console.log(case1)
+        console.log(case2.length)
+
+    }
+
+}
 
