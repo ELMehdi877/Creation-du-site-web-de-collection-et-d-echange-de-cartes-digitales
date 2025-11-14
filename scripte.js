@@ -670,7 +670,7 @@ function arena_drag_drop() {
                 attaque_defence.classList.remove("hidden")
                 document.querySelector(".defence").addEventListener('click', () => {
                     ar_drag.style.height = "70%"
-                    ar_drag.classList.add("rotate-90", "defence")
+                    ar_drag.classList.add("rotate-90", "arena_defence")
                     // ar_drag.classList.add("attaque")
                     ar_drag = null
                     attaque_defence.classList.add("hidden")
@@ -719,7 +719,7 @@ function affiche_adversaire() {
 
                     block_adversaire[i].innerHTML = `
                 <div
-                class="${el.color}  cursor-grab bg-[url(${el.image})] bg-cover bg-center lg:w-[140px] w-[42px] lg:h-[197px] h-[60px] flex-shrink-0 flex flex-col justify-end items-center">
+                class="${el.color} arena_defence cursor-grab bg-[url(${el.image})] bg-cover bg-center lg:w-[140px] w-[42px] lg:h-[197px] h-[60px] flex-shrink-0 flex flex-col justify-end items-center">
                         <div
                             class=" carte text-white relative flex flex-col justify-center items-center bottom-[0.2px]  w-full h-[24px] lg:h-[78px] rounded-[3px] lg:rounded-[10px]">
                             <div class="flex justify-center items-center lg:gap-10 gap-7 relative right-2 lg:right-2 ">
@@ -756,7 +756,7 @@ function affiche_adversaire() {
 
                     block_adversaire[i].innerHTML = `
                 <div
-                class="${el.color} item_drag arena_attaque cursor-grab bg-[url(${el.image})] bg-cover bg-center lg:w-[140px] w-[42px] lg:h-[197px] h-[60px] flex-shrink-0 flex flex-col justify-end items-center">
+                class="${el.color} arena_attaque cursor-grab bg-[url(${el.image})] bg-cover bg-center lg:w-[140px] w-[42px] lg:h-[197px] h-[60px] flex-shrink-0 flex flex-col justify-end items-center">
                         <div
                             class=" carte text-white relative flex flex-col justify-center items-center bottom-[0.2px]  w-full h-[24px] lg:h-[78px] rounded-[3px] lg:rounded-[10px]">
                             <div class="flex justify-center items-center lg:gap-10 gap-7 relative right-2 lg:right-2 ">
@@ -782,10 +782,10 @@ function affiche_adversaire() {
                             </div>
                         </div>
                     </div>
-                `      
-                attaque_pour_adversaire()
-                console.log("true");
-            }
+                `
+                    attaque_pour_adversaire()
+                    // console.log("true");
+                }
                 return
             }
         }
@@ -799,41 +799,92 @@ affiche_adversaire()
 
 // fonction logique de jeux
 const btn_attaque = document.getElementById("btn_attaque")
+let hp_adversaire = document.querySelector('.hp_adversaire')
+let hp_moi = document.querySelector('.hp_moi')
+let dammage = 1000
 
 function logique_play() {
     // let items = document.querySelectorall(".item_arena_drag")
     btn_attaque.addEventListener('click', () => {
-        let case1 = document.querySelectorAll(".case1 .arena_attaque")
-        let case2 = document.querySelectorAll(".case2 .arena_attaque")
-        if (case2.length > 0 && case1.length > 0) {
-            // if (case1[index_attaque].classList()) {
-            let index_attaque = Math.floor(Math.random() * case1.length)
-            console.log(index_attaque);
-            case1[index_attaque].remove()
-            case1 = document.querySelectorAll(".case1 .arena_attaque")
-            console.log(case1)
-            console.log(case2.length)
+        let case1_attaque = document.querySelectorAll(".case1 .arena_attaque")
+        let case1_defence = document.querySelectorAll(".case1 .arena_defence")
 
+        let case2_attaque = document.querySelectorAll(".case2 .arena_attaque")
+        let case2_defence = document.querySelectorAll(".case2 .arena_defence")
+
+        let index = Math.ceil(Math.random() * 2)
+        if (index === 1) {
+            if (case2_attaque.length > 0 || case1_attaque.length > 0) {
+                let index_attaque = Math.floor(Math.random() * case1_attaque.length)
+                // let index_attaque = 0
+                // index_attaque = Array.from(case1_attaque).findIndex(el => el.classList.contains("orange"));
+                console.log(index_attaque)
+                case1_attaque[index_attaque].remove()
+                dammage = dammage - 200
+                hp_adversaire.textContent = dammage + ' HP'
+                case1_attaque = document.querySelectorAll(".case1 .arena_attaque")
+                // console.log(case2.length)
+
+            }
         }
+
+        else {
+            if (case2_defence.length > 0 || case1_defence.length > 0) {
+                let index_defence = Math.floor(Math.random() * case1_defence.length)
+                console.log(index_defence)
+                case1_defence[index_defence].remove()
+                dammage = dammage - 100
+                hp_adversaire.textContent = dammage + ' HP'
+                case1_defence = document.querySelectorAll(".case1 .arena_defence")
+                // console.log(case2.length)
+
+            }
+        }
+        // console.log(index);
+
 
     })
 }
 logique_play()
 
 //fonction d'attaque pour adversaire
+let ind = Math.ceil(Math.random() * 2)
 
 function attaque_pour_adversaire() {
-    let case1 = document.querySelectorAll(".case1 .arena_attaque")
-    let case2 = document.querySelectorAll(".case2 .arena_attaque")
-    if (case2.length > 0 && case1.length > 0) {
-        let index_attaque = Math.floor(Math.random() * case2.length)
-        console.log(index_attaque);
-        case2[index_attaque].remove()
-        case2 = document.querySelectorAll(".case2 .arena_attaque")
-        console.log(case1)
-        console.log(case2.length)
 
+    let case1_attaque = document.querySelectorAll(".case1 .arena_attaque")
+    let case1_defence = document.querySelectorAll(".case1 .arena_defence")
+
+    let case2_attaque = document.querySelectorAll(".case2 .arena_attaque")
+    let case2_defence = document.querySelectorAll(".case2 .arena_defence")
+    ind = Math.ceil(Math.random() * 2)
+    if (ind === 1) {
+        if (case2_attaque.length > 0 || case1_attaque.length > 0) {
+            let index_attaque = Math.floor(Math.random() * case1_attaque.length)
+            console.log(index_attaque)
+            case2_attaque[index_attaque].remove()
+            dammage = dammage - 200
+            hp_moi.textContent = dammage + ' HP'
+            case1_attaque = document.querySelectorAll(".case1 .arena_attaque")
+
+        }
     }
+
+    else {
+        if (case2_defence.length > 0 || case1_defence.length > 0) {
+            let index_defence = Math.floor(Math.random() * case2_defence.length)
+            console.log(index_defence)
+            case2_defence[index_defence].remove()
+            dammage = dammage - 100
+            hp_moi.textContent = dammage + ' HP'
+            case2_defence = document.querySelectorAll(".case2 .arena_defence")
+            // console.log(case2.length)
+
+        }
+    }
+    // console.log(ind + "true");
+
+
 
 }
 
